@@ -157,9 +157,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Outlier-Test.ipynb', 'python/outlier-test/', 'Outlier Test | plotly',
+    'python-Outlier-Test.ipynb', 'python/outlier-test/', 'Outlier Test | new_plotly',
     'Learn how to test for outliers in datasets using Python.',
-    title='Outlier Test in Python. | plotly',
+    title='Outlier Test in Python. | new_plotly',
     name='Outlier Test',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='statistics', order=6,

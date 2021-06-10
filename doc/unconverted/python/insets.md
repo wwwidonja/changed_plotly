@@ -75,9 +75,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 !pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'inset.ipynb', 'python/insets/', 'Inset Plots | plotly',
+    'inset.ipynb', 'python/insets/', 'Inset Plots | new_plotly',
     'How to make an inset graph in python.',
-    title = 'Inset Plots | plotly',
+    title = 'Inset Plots | new_plotly',
     name = 'Inset Plots',
     has_thumbnail='true', thumbnail='thumbnail/insets.jpg',
     language='python', page_type='example_index',

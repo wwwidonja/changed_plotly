@@ -7,7 +7,7 @@ def test_dependencies_not_imported():
 
     # Check that creating a figure without using numpy and pandas does not result in
     # the import of numpy and pandas, even if they are installed.
-    assert "plotly" not in sys.modules
+    assert "new_plotly" not in sys.modules
     assert "numpy" not in sys.modules
     assert "pandas" not in sys.modules
 
@@ -16,7 +16,7 @@ def test_dependencies_not_imported():
     fig = go.Figure().add_scatter(x=[0], y=[1])
     fig.to_json()
 
-    assert "plotly" in sys.modules
+    assert "new_plotly" in sys.modules
     assert "numpy" not in sys.modules
     assert "pandas" not in sys.modules
 

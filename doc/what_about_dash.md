@@ -10,7 +10,7 @@ Learn about how to install Dash at https://dash.plot.ly/installation.
 Everywhere in this page that you see `fig.show()`, you can display the same figure in a Dash application by passing it to the `figure` argument of the [`Graph` component](https://dash.plot.ly/dash-core-components/graph) from the built-in `dash_core_components` package like this:
 
 ```python
-import plotly.graph_objects as go # or plotly.express as px
+import plotly.graph_objects as go # or new_plotly.express as px
 fig = go.Figure() # or any Plotly Express function e.g. px.bar(...)
 # fig.add_trace( ... )
 # fig.update_layout( ... )

@@ -328,9 +328,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 !pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'gapminder-example.ipynb', 'python/gapminder-example/', 'Adding Sliders to Animations | plotly',
+    'gapminder-example.ipynb', 'python/gapminder-example/', 'Adding Sliders to Animations | new_plotly',
     'How to make the classic Gapminder Animation using sliders and buttons in Python.',
-    title='Adding Sliders to Animations | plotly',
+    title='Adding Sliders to Animations | new_plotly',
     name='Adding Sliders to Animations',
     language='python',
     page_type='example_index', has_thumbnail='true', thumbnail='thumbnail/gapminder_animation.gif',

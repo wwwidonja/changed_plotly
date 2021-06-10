@@ -5,19 +5,19 @@ from . import version_skip
 @version_skip
 def test_lazy_imports():
 
-    # plotly not imported yet
-    assert "plotly" not in sys.modules
+    # new_plotly not imported yet
+    assert "new_plotly" not in sys.modules
 
-    # Import top-level plotly module
+    # Import top-level new_plotly module
     import plotly
 
-    assert "plotly" in sys.modules
+    assert "new_plotly" in sys.modules
 
     # Check that submodules are not auto-imported, but can be be accessed using
     # attribute syntax
     submodules = ["graph_objs", "io"]
     for m in submodules:
-        module_str = "plotly." + m
+        module_str = "new_plotly." + m
         assert module_str not in sys.modules
 
         getattr(plotly, m)
@@ -28,7 +28,7 @@ def test_lazy_imports():
     plotly.graph_objects.Figure().to_json()
     submodules = [("layout", "title"), ("scatter", "marker"), ("scattergl", "marker")]
     for module_parts in submodules:
-        module_str = "plotly.graph_objs." + ".".join(module_parts)
+        module_str = "new_plotly.graph_objs." + ".".join(module_parts)
         assert module_str not in sys.modules
 
         # Use getattr to

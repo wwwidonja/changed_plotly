@@ -68,11 +68,11 @@ def ensure_local_plotly_files():
     else:
         warnings.warn(
             "Looks like you don't have 'read-write' permission to "
-            "your 'home' ('~') directory or to our '~/.plotly' "
-            "directory. That means plotly's python api can't setup "
+            "your 'home' ('~') directory or to our '~/.new_plotly' "
+            "directory. That means new_plotly's python api can't setup "
             "local configuration files. No problem though! You'll "
-            "just have to sign-in using 'plotly.plotly.sign_in()'. "
-            "For help with that: 'help(plotly.plotly.sign_in)'."
+            "just have to sign-in using 'new_plotly.new_plotly.sign_in()'. "
+            "For help with that: 'help(new_plotly.new_plotly.sign_in)'."
             "\nQuestions? Visit https://support.plotly.com"
         )
 
@@ -153,13 +153,13 @@ def set_config_file(
     sharing=None,
     auto_open=None,
 ):
-    """Set the keyword-value pairs in `~/.plotly/.config`.
+    """Set the keyword-value pairs in `~/.new_plotly/.config`.
 
     :param (str) plotly_domain: ex - https://plotly.com
-    :param (str) plotly_streaming_domain: ex - stream.plotly.com
+    :param (str) plotly_streaming_domain: ex - stream.new_plotly.com
     :param (str) plotly_api_domain: ex - https://api.plotly.com
     :param (bool) plotly_ssl_verification: True = verify, False = don't verify
-    :param (bool) plotly_proxy_authorization: True = use plotly proxy auth creds
+    :param (bool) plotly_proxy_authorization: True = use new_plotly proxy auth creds
     :param (bool) world_readable: True = public, False = private
 
     """
@@ -219,7 +219,7 @@ def set_config_file(
 
 
 def get_config_file(*args):
-    """Return specified args from `~/.plotly/.config`. as tuple.
+    """Return specified args from `~/.new_plotly/.config`. as tuple.
 
     Returns all if no arguments are specified.
 
@@ -307,7 +307,7 @@ def get_embed(file_owner_or_url, file_id=None, width="100%", height=525):
 
     Plotly uniquely identifies figures with a 'file_owner'/'file_id' pair.
     Since each file is given a corresponding unique url, you may also simply
-    pass a valid plotly url as the first argument.
+    pass a valid new_plotly url as the first argument.
 
     Note, if you're using a file_owner string as the first argument, you MUST
     specify a `file_id` keyword argument. Else, if you're using a url string
@@ -315,7 +315,7 @@ def get_embed(file_owner_or_url, file_id=None, width="100%", height=525):
     or file_id must be set to Python's None value.
 
     Positional arguments:
-    file_owner_or_url (string) -- a valid plotly username OR a valid plotly url
+    file_owner_or_url (string) -- a valid new_plotly username OR a valid new_plotly url
 
     Keyword arguments:
     file_id (default=None) -- an int or string that can be converted to int
@@ -341,7 +341,7 @@ def embed(file_owner_or_url, file_id=None, width="100%", height=525):
 
     Plotly uniquely identifies figures with a 'file_owner'/'file_id' pair.
     Since each file is given a corresponding unique url, you may also simply
-    pass a valid plotly url as the first argument.
+    pass a valid new_plotly url as the first argument.
 
     Note, if you're using a file_owner string as the first argument, you MUST
     specify a `file_id` keyword argument. Else, if you're using a url string
@@ -349,7 +349,7 @@ def embed(file_owner_or_url, file_id=None, width="100%", height=525):
     or file_id must be set to Python's None value.
 
     Positional arguments:
-    file_owner_or_url (string) -- a valid plotly username OR a valid plotly url
+    file_owner_or_url (string) -- a valid new_plotly username OR a valid new_plotly url
 
     Keyword arguments:
     file_id (default=None) -- an int or string that can be converted to int
@@ -386,7 +386,7 @@ def embed(file_owner_or_url, file_id=None, width="100%", height=525):
             get_config_defaults()["plotly_domain"]
             != session.get_session_config()["plotly_domain"]
         ):
-            feedback_contact = "Visit support.plotly.com"
+            feedback_contact = "Visit support.new_plotly.com"
         else:
 
             # different domain likely means enterprise

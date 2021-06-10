@@ -108,9 +108,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Statistics-Charts.ipynb', 'python/statistics-charts/', 'Statistics Charts | plotly',
+    'python-Statistics-Charts.ipynb', 'python/statistics-charts/', 'Statistics Charts | new_plotly',
     'Learn how to plot statistical data with various charts using Python.',
-    title='Statistics Charts in Python. | plotly',
+    title='Statistics Charts in Python. | new_plotly',
     name='Statistics Charts',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='statistics', order=5,

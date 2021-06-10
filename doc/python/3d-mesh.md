@@ -41,7 +41,7 @@ jupyter:
 import plotly.graph_objects as go
 import numpy as np
 
-# Download data set from plotly repo
+# Download data set from new_plotly repo
 pts = np.loadtxt(np.DataSource().open('https://raw.githubusercontent.com/plotly/datasets/master/mesh_dataset.txt'))
 x, y, z = pts.T
 

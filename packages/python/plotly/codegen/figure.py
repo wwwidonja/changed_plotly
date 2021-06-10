@@ -67,7 +67,7 @@ def build_figure_py(
     # Write imports
     # -------------
     # ### Import base class ###
-    buffer.write(f"from plotly.{base_package} import {base_classname}\n")
+    buffer.write(f"from new_plotly.{base_package} import {base_classname}\n")
 
     # Write class definition
     # ----------------------
@@ -147,14 +147,14 @@ class {fig_classname}({base_classname}):\n"""
                 "row : 'all', int or None (default)",
                 "Subplot row index (starting from 1) for the trace to be "
                 "added. Only valid if figure was created using "
-                "`plotly.tools.make_subplots`."
+                "`new_plotly.tools.make_subplots`."
                 "If 'all', addresses all rows in the specified column(s).",
             ),
             (
                 "col : 'all', int or None (default)",
                 "Subplot col index (starting from 1) for the trace to be "
                 "added. Only valid if figure was created using "
-                "`plotly.tools.make_subplots`."
+                "`new_plotly.tools.make_subplots`."
                 "If 'all', addresses all columns in the specified row(s).",
             ),
         ]
@@ -167,7 +167,7 @@ class {fig_classname}({base_classname}):\n"""
             If True, associate this trace with the secondary y-axis of the
             subplot at the specified row and col. Only valid if all of the
             following conditions are satisfied:
-              * The figure was created using `plotly.subplots.make_subplots`.
+              * The figure was created using `new_plotly.subplots.make_subplots`.
               * The row and col arguments are not None
               * The subplot at the specified row and col has type xy
                 (which is the default) and secondary_y True.  These
@@ -188,7 +188,7 @@ class {fig_classname}({base_classname}):\n"""
         # #### Function body ####
         buffer.write(
             f"""
-        from plotly.graph_objs import {trace_node.name_datatype_class}
+        from new_plotly.graph_objs import {trace_node.name_datatype_class}
         new_trace = {trace_node.name_datatype_class}(
         """
         )
@@ -236,7 +236,7 @@ class {fig_classname}({base_classname}):\n"""
               a secondary y-axis condition.
 
             To select yaxis objects by secondary y-axis, the Figure must
-            have been created using plotly.subplots.make_subplots. See
+            have been created using new_plotly.subplots.make_subplots. See
             the docstring for the specs argument to make_subplots for more
             info on creating subplots with secondary y-axes."""
         else:
@@ -269,7 +269,7 @@ class {fig_classname}({base_classname}):\n"""
         row, col: int or None (default None)
             Subplot row and column index of {singular_name} objects to select.
             To select {singular_name} objects by row and column, the Figure
-            must have been created using plotly.subplots.make_subplots.
+            must have been created using new_plotly.subplots.make_subplots.
             If None (the default), all {singular_name} objects are selected.\
 {secondary_y_docstring}
         Returns
@@ -305,7 +305,7 @@ class {fig_classname}({base_classname}):\n"""
         row, col: int or None (default None)
             Subplot row and column index of {singular_name} objects to select.
             To select {singular_name} objects by row and column, the Figure
-            must have been created using plotly.subplots.make_subplots.
+            must have been created using new_plotly.subplots.make_subplots.
             If None (the default), all {singular_name} objects are selected.\
 {secondary_y_docstring}
         Returns
@@ -352,7 +352,7 @@ class {fig_classname}({base_classname}):\n"""
         row, col: int or None (default None)
             Subplot row and column index of {singular_name} objects to select.
             To select {singular_name} objects by row and column, the Figure
-            must have been created using plotly.subplots.make_subplots.
+            must have been created using new_plotly.subplots.make_subplots.
             If None (the default), all {singular_name} objects are selected.\
 {secondary_y_docstring}
         **kwargs
@@ -409,7 +409,7 @@ class {fig_classname}({base_classname}):\n"""
         row, col: int or None (default None)
             Subplot row and column index of {plural_name} to select.
             To select {plural_name} by row and column, the Figure must have been
-            created using plotly.subplots.make_subplots.  To select only those
+            created using new_plotly.subplots.make_subplots.  To select only those
             {singular_name} that are in paper coordinates, set row and col to the
             string 'paper'.  If None (the default), all {plural_name} are selected.
         secondary_y: boolean or None (default None)
@@ -421,7 +421,7 @@ class {fig_classname}({base_classname}):\n"""
               y-axis.
 
             To select {plural_name} by secondary y-axis, the Figure must have been
-            created using plotly.subplots.make_subplots. See the docstring
+            created using new_plotly.subplots.make_subplots. See the docstring
             for the specs argument to make_subplots for more info on
             creating subplots with secondary y-axes.
         Returns
@@ -459,7 +459,7 @@ class {fig_classname}({base_classname}):\n"""
         row, col: int or None (default None)
             Subplot row and column index of {plural_name} to select.
             To select {plural_name} by row and column, the Figure must have been
-            created using plotly.subplots.make_subplots.  To select only those
+            created using new_plotly.subplots.make_subplots.  To select only those
             {plural_name} that are in paper coordinates, set row and col to the
             string 'paper'.  If None (the default), all {plural_name} are selected.
         secondary_y: boolean or None (default None)
@@ -471,7 +471,7 @@ class {fig_classname}({base_classname}):\n"""
               y-axis.
 
             To select {plural_name} by secondary y-axis, the Figure must have been
-            created using plotly.subplots.make_subplots. See the docstring
+            created using new_plotly.subplots.make_subplots. See the docstring
             for the specs argument to make_subplots for more info on
             creating subplots with secondary y-axes.
         Returns
@@ -522,7 +522,7 @@ class {fig_classname}({base_classname}):\n"""
         row, col: int or None (default None)
             Subplot row and column index of {plural_name} to select.
             To select {plural_name} by row and column, the Figure must have been
-            created using plotly.subplots.make_subplots.  To select only those
+            created using new_plotly.subplots.make_subplots.  To select only those
             {singular_name} that are in paper coordinates, set row and col to the
             string 'paper'.  If None (the default), all {plural_name} are selected.
         secondary_y: boolean or None (default None)
@@ -534,7 +534,7 @@ class {fig_classname}({base_classname}):\n"""
               y-axis.
 
             To select {plural_name} by secondary y-axis, the Figure must have been
-            created using plotly.subplots.make_subplots. See the docstring
+            created using new_plotly.subplots.make_subplots. See the docstring
             for the specs argument to make_subplots for more info on
             creating subplots with secondary y-axes.
         **kwargs
@@ -605,7 +605,7 @@ class {fig_classname}({base_classname}):\n"""
         # #### Function body ####
         buffer.write(
             f"""
-        from plotly.graph_objs import layout as _layout
+        from new_plotly.graph_objs import layout as _layout
         new_obj = _layout.{node.name_datatype_class}(arg,
             """
         )

@@ -197,9 +197,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Linear_Algebra.ipynb', 'python/linear-algebra/', 'Linear Algebra | plotly',
+    'python_Linear_Algebra.ipynb', 'python/linear-algebra/', 'Linear Algebra | new_plotly',
     'Learn how to perform several operations on matrices including inverse, eigenvalues, and determinents',
-    title='Linear Algebra in Python. | plotly',
+    title='Linear Algebra in Python. | new_plotly',
     name='Linear Algebra',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=10,

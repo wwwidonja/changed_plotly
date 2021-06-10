@@ -197,7 +197,7 @@ import publisher
 publisher.publish(
     'logos.ipynb', 'python/logos/', 'Add Logos to Charts',
     'How to add images as logos to Plotly charts.',
-    title = 'Add Logos to Charts | plotly',
+    title = 'Add Logos to Charts | new_plotly',
     name = 'Logos',
     has_thumbnail='false', thumbnail='thumbnail/your-tutorial-chart.jpg',
     language='python', page_type='example_index',

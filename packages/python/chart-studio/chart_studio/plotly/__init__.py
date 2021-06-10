@@ -1,5 +1,5 @@
 """
-plotly
+new_plotly
 ======
 
 This module defines functionality that requires interaction between your

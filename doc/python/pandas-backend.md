@@ -42,7 +42,7 @@ To activate this backend, you will need to [have Plotly installed](/python/getti
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 fig = df.plot()
@@ -53,7 +53,7 @@ This functionality wraps [Plotly Express](/python/plotly-express/) and so you ca
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 fig = df.plot(title="Pandas Backend Example", template="simple_white",
@@ -72,7 +72,7 @@ In practice, this means that the following two ways of making a chart are identi
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 
 # using Plotly Express via the Pandas backend
@@ -89,7 +89,7 @@ To achieve a similar effect to `subplots=True`, for example, the [Plotly Express
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 
 fig = df.plot.bar(facet_row="variable")
@@ -103,7 +103,7 @@ The Plotly backend supports the following `kind`s of Pandas plots: `scatter`, `l
 ```python
 import pandas as pd
 import numpy as np
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 np.random.seed(1)
 
 df = pd.DataFrame(dict(
@@ -116,7 +116,7 @@ fig.show()
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 fig = df.plot.line()
@@ -125,7 +125,7 @@ fig.show()
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 fig = df.plot.area()
@@ -134,7 +134,7 @@ fig.show()
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 fig = df.plot.bar()
@@ -143,7 +143,7 @@ fig.show()
 
 ```python
 import pandas as pd
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 
 df = pd.DataFrame(dict(a=[1,3,2], b=[3,2,1]))
 fig = df.plot.barh()
@@ -153,7 +153,7 @@ fig.show()
 ```python
 import pandas as pd
 import numpy as np
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 np.random.seed(1)
 
 df = pd.DataFrame(dict(
@@ -167,7 +167,7 @@ fig.show()
 ```python
 import pandas as pd
 import numpy as np
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 np.random.seed(1)
 
 df = pd.DataFrame(dict(
@@ -185,7 +185,7 @@ The Pandas plotting API also exposes `.hist()` on `DataFrame`s and `Series` obje
 ```python
 import pandas as pd
 import numpy as np
-pd.options.plotting.backend = "plotly"
+pd.options.plotting.backend = "new_plotly"
 np.random.seed(1)
 
 df = pd.DataFrame(dict(

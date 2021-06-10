@@ -182,7 +182,7 @@ class Dashboard(dict):
 
     Example 1: Create a simple Dashboard object
     ```
-    import plotly.dashboard_objs as dashboard
+    import new_plotly.dashboard_objs as dashboard
 
     box_a = {
         'type': 'box',
@@ -220,7 +220,7 @@ class Dashboard(dict):
 
     Example 2: 4 vertical boxes of equal height
     ```
-    import plotly.dashboard_objs as dashboard
+    import new_plotly.dashboard_objs as dashboard
 
     box_a = {
         'type': 'box',
@@ -488,7 +488,7 @@ class Dashboard(dict):
             Default = 50
         Example:
         ```
-        import plotly.dashboard_objs as dashboard
+        import new_plotly.dashboard_objs as dashboard
 
         box_a = {
             'type': 'box',
@@ -570,7 +570,7 @@ class Dashboard(dict):
 
         Example:
         ```
-        import plotly.dashboard_objs as dashboard
+        import new_plotly.dashboard_objs as dashboard
 
         box_a = {
             'type': 'box',
@@ -610,7 +610,7 @@ class Dashboard(dict):
 
         Example:
         ```
-        import plotly.dashboard_objs as dashboard
+        import new_plotly.dashboard_objs as dashboard
 
         box_a = {
             'type': 'box',

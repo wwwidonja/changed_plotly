@@ -33,7 +33,7 @@ modification to the dashboard.
 
 Example: Create a simple Dashboard object
 ```
-import plotly.dashboard_objs as dashboard
+import new_plotly.dashboard_objs as dashboard
 
 box_1 = {
     'type': 'box',

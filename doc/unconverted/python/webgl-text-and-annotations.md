@@ -88,7 +88,7 @@ import publisher
 publisher.publish(
     'webgl-text-and-annotations.ipynb', 'python/webgl-text-and-annotations/', 'WebGL Text and Annotations',
     'How to add webGL based text labels and annotations to plots in python',
-    title = 'WebGL Text and Annotations | plotly',
+    title = 'WebGL Text and Annotations | new_plotly',
     name = 'WebGL Text and Annotations',
     has_thumbnail='false', thumbnail='thumbnail/webgl-text-and-annotations.jpg',
     language='python',

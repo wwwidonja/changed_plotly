@@ -187,7 +187,7 @@ import publisher
 publisher.publish(
     'matplotlib-colorscales.ipynb', 'python/matplotlib-colorscales/', 'Matplotlib Colorscales',
     'How to make Matplotlib Colorscales in Python with Plotly.',
-    title = 'Python Matplotlib Colorscales | plotly',
+    title = 'Python Matplotlib Colorscales | new_plotly',
     name = 'Matplotlib Colorscales',
     has_thumbnail='true', thumbnail='thumbnail/colorbars.jpg',
     language='python', page_type='example_index',

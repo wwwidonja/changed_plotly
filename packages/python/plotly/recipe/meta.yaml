@@ -2,7 +2,7 @@
 {% set version = data.get('version') %}
 
 package:
-  name: plotly
+  name: new_plotly
   version: {{ version }}
 
 source:
@@ -30,7 +30,7 @@ requirements:
 
 test:
   imports:
-    - plotly
+    - new_plotly
 
 about:
   home: https://plot.ly/python/
@@ -44,7 +44,7 @@ about:
     including scientific charts, 3D graphs, statistical charts, SVG maps,
     financial charts, and more.
   doc_url: https://plot.ly/python/
-  dev_url: https://github.com/plotly/plotly.py
+  dev_url: https://github.com/new_plotly/new_plotly.py
 
 extra:
   recipe-maintainers:

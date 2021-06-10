@@ -167,9 +167,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 !pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'heatmap.ipynb', 'python/heatmap-animation/', 'Heatmap Animation | plotly',
+    'heatmap.ipynb', 'python/heatmap-animation/', 'Heatmap Animation | new_plotly',
     'How to make an animated heatmap in Python.',
-    title='Heatmap Animation | plotly',
+    title='Heatmap Animation | new_plotly',
     name='Heatmap Animation',
     language='python',
     page_type='example_index', has_thumbnail='true', thumbnail='thumbnail/heatmap_animation.gif',

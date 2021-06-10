@@ -2,7 +2,7 @@
 Interface to Plotly's /v2/dashboards endpoints.
 
 Partially complete at the moment. Only being used by
-plotly.plotly.dashboard_ops.
+new_plotly.new_plotly.dashboard_ops.
 """
 from __future__ import absolute_import
 

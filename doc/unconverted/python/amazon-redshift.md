@@ -422,7 +422,7 @@ import publisher
 publisher.publish(
     'redshift.ipynb', 'python/amazon-redshift/', 'Plot Data From Amazon Redshift',
     'A tutorial showing how to plot Amazon AWS Redshift data with Plotly.',
-    title = 'Plot Data from Amazon Redshift | plotly',
+    title = 'Plot Data from Amazon Redshift | new_plotly',
     has_thumbnail='false', redirect_from='ipython-notebooks/amazon-redshift/',
     language='python', page_type='example_index',
     display_as='databases', order=3,

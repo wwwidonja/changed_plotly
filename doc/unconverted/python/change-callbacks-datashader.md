@@ -134,7 +134,7 @@ f
 ```python
 # Set background image
 f.layout.images = [go.layout.Image(
-    source = initial_img,  # plotly now performs auto conversion of PIL image to png data URI
+    source = initial_img,  # new_plotly now performs auto conversion of PIL image to png data URI
     xref = "x",
     yref = "y",
     x = x_range[0],
@@ -192,7 +192,7 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 
 import publisher
 publisher.publish(
-    'change-callbacks-datashader.ipynb', 'python/change-callbacks-datashader/', 'FigureWidget | plotly',
+    'change-callbacks-datashader.ipynb', 'python/change-callbacks-datashader/', 'FigureWidget | new_plotly',
     'Display Large Datasets with DataShader and Change Callbacks',
     title = 'DataShader Case Study',
     name = 'DataShader Case Study',

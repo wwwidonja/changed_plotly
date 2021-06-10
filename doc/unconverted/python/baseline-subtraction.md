@@ -131,9 +131,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Baseline-Subtraction.ipynb', 'python/baseline-subtraction/', 'Baseline Subtraction | plotly',
+    'python-Baseline-Subtraction.ipynb', 'python/baseline-subtraction/', 'Baseline Subtraction | new_plotly',
     'Learn how to subtract baseline estimates from data in Python.',
-    title='Baseline Subtraction in Python | plotly',
+    title='Baseline Subtraction in Python | new_plotly',
     name='Baseline Subtraction',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='peak-analysis', order=2,

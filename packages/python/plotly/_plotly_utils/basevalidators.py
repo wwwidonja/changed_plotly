@@ -658,7 +658,7 @@ class SrcValidator(BaseValidator):
     def description(self):
         return """\
     The '{plotly_name}' property must be specified as a string or
-    as a plotly.grid_objs.Column object""".format(
+    as a new_plotly.grid_objs.Column object""".format(
             plotly_name=self.plotly_name
         )
 
@@ -1558,7 +1558,7 @@ class ColorscaleValidator(BaseValidator):
     specified as:
       - A list of colors that will be spaced evenly to create the colorscale.
         Many predefined colorscale lists are included in the sequential, diverging,
-        and cyclical modules in the plotly.colors package.
+        and cyclical modules in the new_plotly.colors package.
       - A list of 2-element lists where the first element is the
         normalized color level value (starting at 0 and ending at 1),
         and the second item is a valid color string.
@@ -2393,21 +2393,21 @@ class CompoundValidator(BaseValidator):
             # graph_objs.Data and graph_objs.Layout
 
             parent_parts = parent_name.split(".")
-            module_str = ".".join(["plotly.graph_objs"] + parent_parts[1:])
+            module_str = ".".join(["new_plotly.graph_objs"] + parent_parts[1:])
         elif parent_name == "layout.template" and data_class_str == "Layout":
             # Remap template's layout to regular layout
-            module_str = "plotly.graph_objs"
+            module_str = "new_plotly.graph_objs"
         elif "layout.template.data" in parent_name:
             # Remap template's traces to regular traces
             parent_name = parent_name.replace("layout.template.data.", "")
             if parent_name:
-                module_str = "plotly.graph_objs." + parent_name
+                module_str = "new_plotly.graph_objs." + parent_name
             else:
-                module_str = "plotly.graph_objs"
+                module_str = "new_plotly.graph_objs"
         elif parent_name:
-            module_str = "plotly.graph_objs." + parent_name
+            module_str = "new_plotly.graph_objs." + parent_name
         else:
-            module_str = "plotly.graph_objs"
+            module_str = "new_plotly.graph_objs"
 
         return module_str
 
@@ -2610,7 +2610,7 @@ class BaseDataValidator(BaseValidator):
     def get_trace_class(self, trace_name):
         # Import trace classes
         if trace_name not in self._class_map:
-            trace_module = import_module("plotly.graph_objs")
+            trace_module = import_module("new_plotly.graph_objs")
             trace_class_name = self.class_strs_map[trace_name]
             self._class_map[trace_name] = getattr(trace_module, trace_class_name)
 
@@ -2699,11 +2699,11 @@ class BaseTemplateValidator(CompoundValidator):
         compound_description = super(BaseTemplateValidator, self).description()
         compound_description += """
       - The name of a registered template where current registered templates
-        are stored in the plotly.io.templates configuration object. The names
+        are stored in the new_plotly.io.templates configuration object. The names
         of all registered templates can be retrieved with:
-            >>> import plotly.io as pio
+            >>> import new_plotly.io as pio
             >>> list(pio.templates)  # doctest: +ELLIPSIS
-            ['ggplot2', 'seaborn', 'simple_white', 'plotly', 'plotly_white', ...]
+            ['ggplot2', 'seaborn', 'simple_white', 'new_plotly', 'plotly_white', ...]
 
       - A string containing multiple registered template names, joined on '+'
         characters (e.g. 'template1+template2'). In this case the resulting

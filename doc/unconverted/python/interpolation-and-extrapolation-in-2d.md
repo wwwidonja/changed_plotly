@@ -111,9 +111,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Interpolation_and_Extrapolation_in_2D.ipynb', 'python/interpolation-and-extrapolation-in-2d/', 'Interpolation and Extrapolation in 2D | plotly',
+    'python_Interpolation_and_Extrapolation_in_2D.ipynb', 'python/interpolation-and-extrapolation-in-2d/', 'Interpolation and Extrapolation in 2D | new_plotly',
     'Learn how to interpolation and extrapolate data in two dimensions',
-    title='Interpolation and Extrapolation in 2D in Python. | plotly',
+    title='Interpolation and Extrapolation in 2D in Python. | new_plotly',
     name='Interpolation and Extrapolation in 2D',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=4,

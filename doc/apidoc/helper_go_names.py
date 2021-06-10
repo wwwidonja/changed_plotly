@@ -31,6 +31,6 @@ autosubmodule = ""
 
 for submodule in submodules:
     autosubmodule += (
-        ".. automodule:: plotly.graph_objects.%s\n    :members:\n\n" % submodule
+        ".. automodule:: new_plotly.graph_objects.%s\n    :members:\n\n" % submodule
     )
 print(autosubmodule)

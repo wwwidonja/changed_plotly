@@ -56,7 +56,7 @@ Build and publish the final version of the extensions to NPM. We do this first b
 once we push to PyPI the README will refer to these versions.
 
 ```bash
-cd packages/javascript/jupyterlab-plotly
+cd packages/javascript/jupyterlab-new_plotly
 npm run build && npm publish --access public
 ```
 
@@ -68,11 +68,11 @@ Build and publish the final version to PyPI.
 
 ```bash
 (plotly_dev) $ git status # make sure it's not dirty!
-(plotly_dev) $ cd packages/python/plotly
+(plotly_dev) $ cd packages/python/new_plotly
 (plotly_dev) $ rm -rf dist
 (plotly_dev) $ python setup.py sdist bdist_wheel
 (plotly_dev) $ rm -f dist/*dirty*
-(plotly_dev) $ twine upload dist/plotly-X.Y.Z*
+(plotly_dev) $ twine upload dist/new_plotly-X.Y.Z*
 ```
 
 Note: this will intentionally fail if your current git tree is dirty, because we want the tag
@@ -80,7 +80,7 @@ to reflect what is being released, and the version number comes from the tag and
 
 After it has uploaded, move to another environment and double+triple check that you are able to upgrade ok:
 ```bash
-$ pip install plotly --upgrade
+$ pip install new_plotly --upgrade
 ```
 
 And ask one of your friends to do it too. Our tests should catch any issues, but you never know.
@@ -180,13 +180,13 @@ To upload to PyPI you'll also need to have `twine` installed:
 And, you'll need to be a maintainer on PyPI. Then, from inside the repository:
 
 ```bash
-(plotly_dev) $ cd packages/python/plotly
+(plotly_dev) $ cd packages/python/new_plotly
 (plotly_dev) $ git checkout release_X.Y.Z
 (plotly_dev) $ git stash
 (plotly_dev) $ rm -rf dist
 (plotly_dev) $ python setup.py sdist bdist_wheel
 (plotly_dev) $ rm -f dist/*dirty*
-(plotly_dev) $ twine upload dist/plotly-X.Y.Zrc1*
+(plotly_dev) $ twine upload dist/new_plotly-X.Y.Zrc1*
 ```
 
 Note: this will intentionally fail if your current git tree is dirty, because we want the tag
@@ -198,7 +198,7 @@ to reflect what is being released, and the version number comes from the tag and
 Now, publish the release candidate of the extensions to NPM.
 
 ```bash
-cd ./packages/javascript/jupyterlab-plotly
+cd ./packages/javascript/jupyterlab-new_plotly
 npm run build && npm publish --access public --tag next
 ```
 
@@ -273,8 +273,8 @@ Create a new tag for the release
 (plotly_dev) $ git checkout master
 (plotly_dev) $ git stash
 (plotly_dev) $ git pull origin master
-(plotly_dev) $ git tag plotly-geo-vX.Y.Z
-(plotly_dev) $ git push origin plotly-geo-vX.Y.Z
+(plotly_dev) $ git tag new_plotly-geo-vX.Y.Z
+(plotly_dev) $ git push origin new_plotly-geo-vX.Y.Z
 ```
 
 ### Publishing to PYPI
@@ -282,9 +282,9 @@ Create a new tag for the release
 Publish the final version to PyPI
 
 ```bash
-(plotly_dev) $ cd packages/python/plotly-geo
+(plotly_dev) $ cd packages/python/new_plotly-geo
 (plotly_dev) $ python setup.py sdist bdist_wheel
-(plotly_dev) $ twine upload dist/plotly-geo-X.Y.Z.tar.gz
+(plotly_dev) $ twine upload dist/new_plotly-geo-X.Y.Z.tar.gz
 (plotly_dev) $ twine upload dist/plotly_geo-X.Y.Z-py3-none-any.whl
 ```
 

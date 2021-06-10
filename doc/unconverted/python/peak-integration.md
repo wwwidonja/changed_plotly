@@ -145,9 +145,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Peak-Integration.ipynb', 'python/peak-integration/', 'Peak Integration | plotly',
+    'python-Peak-Integration.ipynb', 'python/peak-integration/', 'Peak Integration | new_plotly',
     'Learn how to integrate the area between peaks and bassline in Python.',
-    title='Peak Integration in Python | plotly',
+    title='Peak Integration in Python | new_plotly',
     name='Peak Integration',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='peak-analysis', order=4,

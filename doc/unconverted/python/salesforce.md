@@ -161,7 +161,7 @@ By clicking on the "play with this data!" you can export, share, collaborate, an
 from IPython.display import HTML
 HTML("""<div>
     <a href="https://plot.ly/~bill_chambers/21/" target="_blank" title="Chuck vs Bill Sales Amounts" style="display: block; text-align: center;"><img src="https://plot.ly/~bill_chambers/21.png" alt="Chuck vs Bill Sales Amounts" style="max-width: 100%;width: 1368px;"  width="1368" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
-    <script data-plotly="bill_chambers:21" src="https://plot.ly/embed.js" async></script>
+    <script data-new_plotly="bill_chambers:21" src="https://plot.ly/embed.js" async></script>
 </div>""")
 ```
 

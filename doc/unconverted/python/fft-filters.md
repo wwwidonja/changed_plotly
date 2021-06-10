@@ -223,9 +223,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-FFT-Filters.ipynb', 'python/fft-filters/', 'FFT Filters | plotly',
+    'python-FFT-Filters.ipynb', 'python/fft-filters/', 'FFT Filters | new_plotly',
     'Learn how filter out the frequencies of a signal by using low-pass, high-pass and band-pass FFT filtering.',
-    title='FFT Filters in Python | plotly',
+    title='FFT Filters in Python | new_plotly',
     name='FFT Filters',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='signal-analysis', order=2)

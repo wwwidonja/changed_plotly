@@ -50,7 +50,7 @@ the structure of the code and of the repository.
   as we are introducing more features into `plotly.express`. Some issues in the
   tracker are labeled "figure_factory" and can be good issues to work on. More
   instructions on figure factories are found
-  [here](packages/python/plotly/plotly/figure_factory/README.md).
+  [here](packages/python/plotly/new_plotly/figure_factory/README.md).
 
 - other pure-Python submodules are: `plotly.io` (low-level interface for
   displaying, reading and writing figures), `plotly.subplots` (helper function
@@ -118,7 +118,7 @@ First, you'll need to *get* our project. This is the appropriate *clone* command
 
 ```bash
 git clone https://github.com/your_github_username/plotly.py.git
-cd plotly.py
+cd new_plotly.py
 ```
 
 Note: if you're just getting started with git, there exist great resources to
@@ -129,8 +129,8 @@ learn and become confident about git, like http://try.github.io/.
 You can use either [conda][conda-env] or [virtualenv][virtualenv] to create a virtual environment for plotly development, e.g.
 
 ```bash
-conda create -n plotly-dev python
-conda activate plotly-dev
+conda create -n new_plotly-dev python
+conda activate new_plotly-dev
 ```
 
 [conda-env]: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands
@@ -138,24 +138,24 @@ conda activate plotly-dev
 
 ### Install requirements - (Non-Windows)
 ```bash
-(plotly_dev) $ pip install -r packages/python/plotly/requirements.txt
-(plotly_dev) $ pip install -r packages/python/plotly/optional-requirements.txt
+(plotly_dev) $ pip install -r packages/python/new_plotly/requirements.txt
+(plotly_dev) $ pip install -r packages/python/new_plotly/optional-requirements.txt
  ```
 ### Install requirements - (Windows + Conda)
 Because Windows requires Visual Studio libraries to compile some of the optional dependencies, follow these steps to
 complete installation and avoid gdal-config errors.
 
 ```bash
-(plotly_dev) $ pip install -r packages/python/plotly/requirements.txt
+(plotly_dev) $ pip install -r packages/python/new_plotly/requirements.txt
 (plotly_dev) $ conda install fiona
-(plotly_dev) $ pip install -r packages/python/plotly/optional-requirements.txt
+(plotly_dev) $ pip install -r packages/python/new_plotly/optional-requirements.txt
 ```
 
 ### Editable install of plotly packages
 ```bash
-(plotly_dev) $ pip install -e packages/python/plotly/
+(plotly_dev) $ pip install -e packages/python/new_plotly/
 (plotly_dev) $ pip install -e packages/python/chart-studio/
-(plotly_dev) $ pip install -e packages/python/plotly-geo/
+(plotly_dev) $ pip install -e packages/python/new_plotly-geo/
 ```
 This will ensure that the installed packages links to your local development
 directory, meaning that all changes you make reflect directly in your
@@ -216,7 +216,7 @@ First update the version of the `plotly.js` dependency in `packages/javascript/j
 Then run the `updateplotlyjs` command with:
 
 ```bash
-$ cd packages/python/plotly
+$ cd packages/python/new_plotly
 $ python setup.py updateplotlyjs
 ```
 
@@ -241,31 +241,31 @@ Since our tests cover *all* the functionality, to prevent tons of errors from sh
 After you've done that, go ahead and run the test suite!
 
 ```bash
-pytest  packages/python/plotly/plotly/tests/
+pytest  packages/python/new_plotly/new_plotly/tests/
 ```
 
 Or for more *verbose* output:
 
 ```bash
-pytest -v  packages/python/plotly/plotly/tests/
+pytest -v  packages/python/new_plotly/new_plotly/tests/
 ```
 
 Either of those will run *every* test we've written for the Python API. You can get more granular by running something like:
 
 ```bash
-pytest  packages/python/plotly/plotly/tests/test_core/
+pytest  packages/python/new_plotly/new_plotly/tests/test_core/
 ```
 
 ... or even more granular by running something like:
 
 ```bash
-pytest plotly/tests/test_plotly/test_plot.py
+pytest new_plotly/tests/test_plotly/test_plot.py
 ```
 
 or for a specific test function
 
 ```bash
-pytest plotly/tests/test_plotly/test_plot.py::test_function
+pytest new_plotly/tests/test_plotly/test_plot.py::test_function
 ```
 
 ### Running tests with `tox`

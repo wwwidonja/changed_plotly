@@ -190,7 +190,7 @@ import publisher
 publisher.publish(
     'Plotly-project-3d-onto-a-plane.ipynb', 'python/2d-projection-of-3d-surface/', 'Projection of 3D Surface',
     'How to project 3D Surface plots in 2D with Plotly.',
-    title = '2D Projection of 3D surface | plotly',
+    title = '2D Projection of 3D surface | new_plotly',
     has_thumbnail='true', thumbnail='thumbnail/projection-3d.jpg',
     language='python',
     display_as='3d_charts', order=19,

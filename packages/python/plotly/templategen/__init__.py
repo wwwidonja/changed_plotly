@@ -12,7 +12,7 @@ if __name__ == "__main__":
         with open(
             os.path.join(
                 package_dir,
-                "plotly",
+                "new_plotly",
                 "package_data",
                 "templates",
                 "%s.json" % template_name,

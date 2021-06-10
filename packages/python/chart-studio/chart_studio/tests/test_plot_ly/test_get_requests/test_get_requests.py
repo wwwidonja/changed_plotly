@@ -14,10 +14,10 @@ import json as _json
 from chart_studio.tests.utils import PlotlyTestCase
 
 default_headers = {
-    "plotly-username": "",
-    "plotly-apikey": "",
-    "plotly-version": "2.0",
-    "plotly-platform": "pythonz",
+    "new_plotly-username": "",
+    "new_plotly-apikey": "",
+    "new_plotly-version": "2.0",
+    "new_plotly-platform": "pythonz",
 }
 
 server = "https://plotly.com"
@@ -30,8 +30,8 @@ class GetRequestsTest(PlotlyTestCase):
         file_owner = "get_test_user"
         file_id = 0
         hd = copy.copy(default_headers)
-        hd["plotly-username"] = username
-        hd["plotly-apikey"] = api_key
+        hd["new_plotly-username"] = username
+        hd["new_plotly-apikey"] = api_key
         resource = "/apigetfile/{0}/{1}/".format(file_owner, file_id)
         response = requests.get(server + resource, headers=hd)
         if six.PY2:
@@ -51,8 +51,8 @@ class GetRequestsTest(PlotlyTestCase):
         file_owner = "get_test_user"
         file_id = 1000
         hd = copy.copy(default_headers)
-        hd["plotly-username"] = username
-        hd["plotly-apikey"] = api_key
+        hd["new_plotly-username"] = username
+        hd["new_plotly-apikey"] = api_key
         resource = "/apigetfile/{0}/{1}/".format(file_owner, file_id)
         response = requests.get(server + resource, headers=hd)
         if six.PY2:
@@ -71,8 +71,8 @@ class GetRequestsTest(PlotlyTestCase):
         file_owner = "get_test_user"
         file_id = 0
         hd = copy.copy(default_headers)
-        hd["plotly-username"] = username
-        hd["plotly-apikey"] = api_key
+        hd["new_plotly-username"] = username
+        hd["new_plotly-apikey"] = api_key
         resource = "/apigetfile/{0}/{1}/".format(file_owner, file_id)
         response = requests.get(server + resource, headers=hd)
         self.assertEqual(response.status_code, 401)
@@ -87,8 +87,8 @@ class GetRequestsTest(PlotlyTestCase):
         file_owner = "get_test_user"
         file_id = 1  # 1 is a private file
         hd = copy.copy(default_headers)
-        hd["plotly-username"] = username
-        hd["plotly-apikey"] = api_key
+        hd["new_plotly-username"] = username
+        hd["new_plotly-apikey"] = api_key
         resource = "/apigetfile/{0}/{1}/".format(file_owner, file_id)
         response = requests.get(server + resource, headers=hd)
         if six.PY2:
@@ -121,8 +121,8 @@ class GetRequestsTest(PlotlyTestCase):
         file_owner = "get_test_user"
         file_id = 0
         hd = copy.copy(default_headers)
-        hd["plotly-username"] = username
-        hd["plotly-apikey"] = api_key
+        hd["new_plotly-username"] = username
+        hd["new_plotly-apikey"] = api_key
         resource = "/apigetfile/{0}/{1}/".format(file_owner, file_id)
         response = requests.get(server + resource, headers=hd)
         if six.PY2:

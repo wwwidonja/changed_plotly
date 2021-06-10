@@ -1,13 +1,13 @@
 """
-plotly
+new_plotly
 ======
 
-A module that contains the plotly class, a liaison between the user
+A module that contains the new_plotly class, a liaison between the user
 and ploty's servers.
 
 1. get DEFAULT_PLOT_OPTIONS for options
 
-2. update plot_options with .plotly/ dir
+2. update plot_options with .new_plotly/ dir
 
 3. update plot_options with _plot_options
 
@@ -75,7 +75,7 @@ def _plot_option_logic(plot_options_from_args):
     Given some plot_options as part of a plot call, decide on final options.
     Precedence:
         1 - Start with DEFAULT_PLOT_OPTIONS
-        2 - Update each key with ~/.plotly/.config options (tls.get_config)
+        2 - Update each key with ~/.new_plotly/.config options (tls.get_config)
         3 - Update each key with session plot options (set by py.sign_in)
         4 - Update each key with plot, iplot call signature options
 
@@ -208,7 +208,7 @@ def plot(figure_or_data, validate=True, **plot_options):
                         "graphing more than 500k data points for line "
                         "charts, or 40k points for other types of charts. "
                         "Here are some suggestions:\n"
-                        "(1) Use the `plotly.graph_objs.Scattergl` "
+                        "(1) Use the `new_plotly.graph_objs.Scattergl` "
                         "trace object to generate a WebGl graph.\n"
                         "(2) Trying using the image API to return an image "
                         "instead of a graph URL\n"
@@ -301,10 +301,10 @@ def plot(figure_or_data, validate=True, **plot_options):
 
 
 def iplot_mpl(fig, resize=True, strip_style=False, update=None, **plot_options):
-    """Replot a matplotlib figure with plotly in IPython.
+    """Replot a matplotlib figure with new_plotly in IPython.
 
     This function:
-    1. converts the mpl figure into JSON (run help(plotly.tools.mpl_to_plotly))
+    1. converts the mpl figure into JSON (run help(new_plotly.tools.mpl_to_plotly))
     2. makes a request to Plotly to save this figure in your account
     3. displays the image in your IPython output cell
 
@@ -312,13 +312,13 @@ def iplot_mpl(fig, resize=True, strip_style=False, update=None, **plot_options):
     fig -- a figure object from matplotlib
 
     Keyword arguments:
-    resize (default=True) -- allow plotly to choose the figure size
-    strip_style (default=False) -- allow plotly to choose style options
+    resize (default=True) -- allow new_plotly to choose the figure size
+    strip_style (default=False) -- allow new_plotly to choose style options
     update (default=None) -- update the resulting figure with an 'update'
-        dictionary-like object resembling a plotly 'Figure' object
+        dictionary-like object resembling a new_plotly 'Figure' object
 
     Additional keyword arguments:
-    plot_options -- run help(plotly.plotly.iplot)
+    plot_options -- run help(new_plotly.new_plotly.iplot)
 
     """
     import plotly.tools
@@ -328,17 +328,17 @@ def iplot_mpl(fig, resize=True, strip_style=False, update=None, **plot_options):
         fig.update(update)
     elif update is not None:
         raise _plotly_utils.exceptions.PlotlyGraphObjectError(
-            "'update' must be dictionary-like and a valid plotly Figure "
-            "object. Run 'help(plotly.graph_objs.Figure)' for more info."
+            "'update' must be dictionary-like and a valid new_plotly Figure "
+            "object. Run 'help(new_plotly.graph_objs.Figure)' for more info."
         )
     return iplot(fig, **plot_options)
 
 
 def plot_mpl(fig, resize=True, strip_style=False, update=None, **plot_options):
-    """Replot a matplotlib figure with plotly.
+    """Replot a matplotlib figure with new_plotly.
 
     This function:
-    1. converts the mpl figure into JSON (run help(plotly.tools.mpl_to_plotly))
+    1. converts the mpl figure into JSON (run help(new_plotly.tools.mpl_to_plotly))
     2. makes a request to Plotly to save this figure in your account
     3. opens your figure in a browser tab OR returns the unique figure url
 
@@ -346,13 +346,13 @@ def plot_mpl(fig, resize=True, strip_style=False, update=None, **plot_options):
     fig -- a figure object from matplotlib
 
     Keyword arguments:
-    resize (default=True) -- allow plotly to choose the figure size
-    strip_style (default=False) -- allow plotly to choose style options
+    resize (default=True) -- allow new_plotly to choose the figure size
+    strip_style (default=False) -- allow new_plotly to choose style options
     update (default=None) -- update the resulting figure with an 'update'
-        dictionary-like object resembling a plotly 'Figure' object
+        dictionary-like object resembling a new_plotly 'Figure' object
 
     Additional keyword arguments:
-    plot_options -- run help(plotly.plotly.plot)
+    plot_options -- run help(new_plotly.new_plotly.plot)
 
     """
     import plotly.tools
@@ -362,8 +362,8 @@ def plot_mpl(fig, resize=True, strip_style=False, update=None, **plot_options):
         fig.update(update)
     elif update is not None:
         raise _plotly_utils.exceptions.PlotlyGraphObjectError(
-            "'update' must be dictionary-like and a valid plotly Figure "
-            "object. Run 'help(plotly.graph_objs.Figure)' for more info."
+            "'update' must be dictionary-like and a valid new_plotly Figure "
+            "object. Run 'help(new_plotly.graph_objs.Figure)' for more info."
         )
     return plot(fig, **plot_options)
 
@@ -445,7 +445,7 @@ def get_figure(file_owner_or_url, file_id=None, raw=False):
 
     Plotly uniquely identifies figures with a 'file_owner'/'file_id' pair.
     Since each file is given a corresponding unique url, you may also simply
-    pass a valid plotly url as the first argument.
+    pass a valid new_plotly url as the first argument.
 
     Examples:
         fig = get_figure('https://plotly.com/~chris/1638')
@@ -457,24 +457,24 @@ def get_figure(file_owner_or_url, file_id=None, raw=False):
      or file_id must be set to Python's None value.
 
     Positional arguments:
-    file_owner_or_url (string) -- a valid plotly username OR a valid plotly url
+    file_owner_or_url (string) -- a valid new_plotly username OR a valid new_plotly url
 
     Keyword arguments:
     file_id (default=None) -- an int or string that can be converted to int
                               if you're using a url, don't fill this in!
     raw (default=False) -- if true, return unicode JSON string verbatim**
 
-    **by default, plotly will return a Figure object. This representation used
+    **by default, new_plotly will return a Figure object. This representation used
     to decode the keys and values from unicode (if possible) and remove
     information irrelevant to the figure representation. Now if in Python 2,
     unicode is converted to regular strings. Also irrelevant information is
     now NOT stripped: an error will be raised if a figure contains invalid
     properties.
 
-    Finally this function converts the JSON dictionary objects to plotly
+    Finally this function converts the JSON dictionary objects to new_plotly
     `graph objects`.
 
-    Run `help(plotly.graph_objs.Figure)` for a list of valid properties.
+    Run `help(new_plotly.graph_objs.Figure)` for a list of valid properties.
 
     """
     import plotly.tools
@@ -579,8 +579,8 @@ class Stream:
     Stream example:
     # Initialize a streaming graph
     # by embedding stream_id's in the graph's traces
-    import plotly.plotly as py
-    from plotly.graph_objs import Data, Scatter, Stream
+    import new_plotly.new_plotly as py
+    from new_plotly.graph_objs import Data, Scatter, Stream
     stream_id = "your_stream_id" # See {plotly_domain}/settings
     py.plot(Data([Scatter(x=[], y=[],
                           stream=Stream(token=stream_id, maxpoints=100))]))
@@ -600,7 +600,7 @@ class Stream:
         Initialize a Stream object with your unique stream_id.
         Find your stream_id at {plotly_domain}/settings.
 
-        For more help, see: `help(plotly.plotly.Stream)`
+        For more help, see: `help(new_plotly.new_plotly.Stream)`
         or see examples and tutorials here:
         https://plotly.com/python/streaming/
 
@@ -622,7 +622,7 @@ class Stream:
         # host will be None. Use streaming_url in this case.
         host = six.moves.urllib.parse.urlparse(streaming_url).hostname or streaming_url
 
-        headers = {"Host": host, "plotly-streamtoken": self.stream_id}
+        headers = {"Host": host, "new_plotly-streamtoken": self.stream_id}
         streaming_specs = {
             "server": host,
             "port": port,
@@ -660,9 +660,9 @@ class Stream:
 
     def open(self):
         """
-        Open streaming connection to plotly.
+        Open streaming connection to new_plotly.
 
-        For more help, see: `help(plotly.plotly.Stream)`
+        For more help, see: `help(new_plotly.new_plotly.Stream)`
         or see examples and tutorials here:
         https://plotly.com/python/streaming/
 
@@ -685,7 +685,7 @@ class Stream:
         keyword arguments:
         layout (default=None) - A valid Layout object or dict with
                                 compatible properties
-                                Run help(plotly.graph_objs.Layout)
+                                Run help(new_plotly.graph_objs.Layout)
 
         Examples:
 
@@ -704,11 +704,11 @@ class Stream:
         Set a new z value array for a Heatmap trace
         >>> write(dict(z=[[1, 2, 3], [4, 5, 6]]))
 
-        The connection to plotly's servers is checked before writing
+        The connection to new_plotly's servers is checked before writing
         and reconnected if disconnected and if the response status code
         is in `reconnect_on`.
 
-        For more help, see: `help(plotly.plotly.Stream)`
+        For more help, see: `help(new_plotly.new_plotly.Stream)`
         or see examples and tutorials here:
 
         """
@@ -742,9 +742,9 @@ class Stream:
 
     def close(self):
         """
-        Close the stream connection to plotly's streaming servers.
+        Close the stream connection to new_plotly's streaming servers.
 
-        For more help, see: `help(plotly.plotly.Stream)`
+        For more help, see: `help(new_plotly.new_plotly.Stream)`
         or see examples and tutorials here:
         https://plotly.com/python/streaming/
 
@@ -759,7 +759,7 @@ class Stream:
 
 class image:
     """
-    Helper functions wrapped around plotly's static image generation api.
+    Helper functions wrapped around new_plotly's static image generation api.
 
     """
 
@@ -769,7 +769,7 @@ class image:
 
         positional arguments:
         - figure_or_data: The figure dict-like or data list-like object that
-                          describes a plotly figure.
+                          describes a new_plotly figure.
                           Same argument used in `py.plot`, `py.iplot`,
                           see https://plotly.com/python for examples
         - format: 'png', 'svg', 'jpeg', 'pdf', 'emf'
@@ -781,7 +781,7 @@ class image:
 
         example:
         ```
-        import plotly.plotly as py
+        import new_plotly.new_plotly as py
         fig = {'data': [{'x': [1, 2, 3], 'y': [3, 1, 5], 'type': 'bar'}]}
         py.image.get(fig, 'png', scale=3)
         ```
@@ -837,7 +837,7 @@ class image:
 
         positional arguments:
         - figure_or_data: The figure dict-like or data list-like object that
-                          describes a plotly figure.
+                          describes a new_plotly figure.
                           Same argument used in `py.plot`, `py.iplot`,
                           see https://plotly.com/python for examples
         - format: 'png', 'svg', 'jpeg', 'pdf'
@@ -848,7 +848,7 @@ class image:
 
         example:
         ```
-        import plotly.plotly as py
+        import new_plotly.new_plotly as py
         fig = {'data': [{'x': [1, 2, 3], 'y': [3, 1, 5], 'type': 'bar'}]}
         py.image.ishow(fig, 'png', scale=3)
         """
@@ -881,7 +881,7 @@ class image:
 
         positional arguments:
         - figure_or_data: The figure dict-like or data list-like object that
-                          describes a plotly figure.
+                          describes a new_plotly figure.
                           Same argument used in `py.plot`, `py.iplot`,
                           see https://plotly.com/python for examples
         - filename: The filepath to save the image to
@@ -893,7 +893,7 @@ class image:
 
         example:
         ```
-        import plotly.plotly as py
+        import new_plotly.new_plotly as py
         fig = {'data': [{'x': [1, 2, 3], 'y': [3, 1, 5], 'type': 'bar'}]}
         py.image.save_as(fig, 'my_image.png', scale=3)
         ```
@@ -1006,14 +1006,14 @@ class grid_ops:
         Upload a grid to your Plotly account with the specified filename.
 
         Positional arguments:
-            - grid: A plotly.grid_objs.Grid object,
-                    call `help(plotly.grid_ops.Grid)` for more info.
+            - grid: A new_plotly.grid_objs.Grid object,
+                    call `help(new_plotly.grid_ops.Grid)` for more info.
             - filename: Name of the grid to be saved in your Plotly account.
                         To save a grid in a folder in your Plotly account,
                         separate specify a filename with folders and filename
                         separated by backslashes (`/`).
                         If a grid, plot, or folder already exists with the same
-                        filename, a `plotly.exceptions.RequestError` will be
+                        filename, a `new_plotly.exceptions.RequestError` will be
                         thrown with status_code 409.  If filename is None,
                         and randomly generated filename will be used.
 
@@ -1030,12 +1030,12 @@ class grid_ops:
 
         Filenames must be unique. To overwrite a grid with the same filename,
         you'll first have to delete the grid with the blocking name. See
-        `plotly.plotly.grid_ops.delete`.
+        `new_plotly.new_plotly.grid_ops.delete`.
 
-        Usage example 1: Upload a plotly grid
+        Usage example 1: Upload a new_plotly grid
         ```
-        from plotly.grid_objs import Grid, Column
-        import plotly.plotly as py
+        from new_plotly.grid_objs import Grid, Column
+        import new_plotly.new_plotly as py
         column_1 = Column([1, 2, 3], 'time')
         column_2 = Column([4, 2, 5], 'voltage')
         grid = Grid([column_1, column_2])
@@ -1045,9 +1045,9 @@ class grid_ops:
         Usage example 2: Make a graph based with data that is sourced
                          from a newly uploaded Plotly grid
         ```
-        import plotly.plotly as py
-        from plotly.grid_objs import Grid, Column
-        from plotly.graph_objs import Scatter
+        import new_plotly.new_plotly as py
+        from new_plotly.grid_objs import Grid, Column
+        from new_plotly.graph_objs import Scatter
         # Upload a grid
         column_1 = Column([1, 2, 3], 'time')
         column_2 = Column([4, 2, 5], 'voltage')
@@ -1061,7 +1061,7 @@ class grid_ops:
         ```
 
         """
-        # transmorgify grid object into plotly's format
+        # transmorgify grid object into new_plotly's format
         grid_json = grid._to_plotly_grid_json()
         if meta is not None:
             grid_json["metadata"] = meta
@@ -1108,18 +1108,18 @@ class grid_ops:
         """
         Append columns to a Plotly grid.
 
-        `columns` is an iterable of plotly.grid_objs.Column objects
+        `columns` is an iterable of new_plotly.grid_objs.Column objects
         and only one of `grid` and `grid_url` needs to specified.
 
         `grid` is a ploty.grid_objs.Grid object that has already been
-        uploaded to plotly with the grid_ops.upload method.
+        uploaded to new_plotly with the grid_ops.upload method.
 
-        `grid_url` is a unique URL of a `grid` in your plotly account.
+        `grid_url` is a unique URL of a `grid` in your new_plotly account.
 
         Usage example 1: Upload a grid to Plotly, and then append a column
         ```
-        from plotly.grid_objs import Grid, Column
-        import plotly.plotly as py
+        from new_plotly.grid_objs import Grid, Column
+        import new_plotly.new_plotly as py
         column_1 = Column([1, 2, 3], 'time')
         grid = Grid([column_1])
         py.grid_ops.upload(grid, 'time vs voltage')
@@ -1132,8 +1132,8 @@ class grid_ops:
         Usage example 2: Append a column to a grid that already exists on
                          Plotly
         ```
-        from plotly.grid_objs import Grid, Column
-        import plotly.plotly as py
+        from new_plotly.grid_objs import Grid, Column
+        import new_plotly.new_plotly as py
 
         grid_url = 'https://plotly.com/~chris/3143'
         column_1 = Column([1, 2, 3], 'time')
@@ -1181,14 +1181,14 @@ class grid_ops:
         Only one of `grid` and `grid_url` needs to specified.
 
         `grid` is a ploty.grid_objs.Grid object that has already been
-        uploaded to plotly with the grid_ops.upload method.
+        uploaded to new_plotly with the grid_ops.upload method.
 
-        `grid_url` is a unique URL of a `grid` in your plotly account.
+        `grid_url` is a unique URL of a `grid` in your new_plotly account.
 
         Usage example 1: Upload a grid to Plotly, and then append rows
         ```
-        from plotly.grid_objs import Grid, Column
-        import plotly.plotly as py
+        from new_plotly.grid_objs import Grid, Column
+        import new_plotly.new_plotly as py
         column_1 = Column([1, 2, 3], 'time')
         column_2 = Column([5, 2, 7], 'voltage')
         grid = Grid([column_1, column_2])
@@ -1201,8 +1201,8 @@ class grid_ops:
 
         Usage example 2: Append a row to a grid that already exists on Plotly
         ```
-        from plotly.grid_objs import Grid
-        import plotly.plotly as py
+        from new_plotly.grid_objs import Grid
+        import new_plotly.new_plotly as py
 
         grid_url = 'https://plotly.com/~chris/3143'
 
@@ -1254,15 +1254,15 @@ class grid_ops:
 
         Only one of `grid` or `grid_url` needs to be specified.
 
-        `grid` is a plotly.grid_objs.Grid object that has already
+        `grid` is a new_plotly.grid_objs.Grid object that has already
                been uploaded to Plotly.
 
         `grid_url` is the URL of the Plotly grid to delete
 
-        Usage example 1: Upload a grid to plotly, then delete it
+        Usage example 1: Upload a grid to new_plotly, then delete it
         ```
-        from plotly.grid_objs import Grid, Column
-        import plotly.plotly as py
+        from new_plotly.grid_objs import Grid, Column
+        import new_plotly.new_plotly as py
         column_1 = Column([1, 2, 3], 'time')
         column_2 = Column([4, 2, 5], 'voltage')
         grid = Grid([column_1, column_2])
@@ -1272,9 +1272,9 @@ class grid_ops:
         py.grid_ops.delete(grid)
         ```
 
-        Usage example 2: Delete a plotly grid by url
+        Usage example 2: Delete a new_plotly grid by url
         ```
-        import plotly.plotly as py
+        import new_plotly.new_plotly as py
 
         grid_url = 'https://plotly.com/~chris/3'
         py.grid_ops.delete(grid_url=grid_url)
@@ -1311,15 +1311,15 @@ class meta_ops:
 
         Only one of `grid` or `grid_url` needs to be specified.
 
-        `grid` is a plotly.grid_objs.Grid object that has already
+        `grid` is a new_plotly.grid_objs.Grid object that has already
                been uploaded to Plotly.
 
         `grid_url` is the URL of the Plotly grid to attach Metadata to.
 
         Usage example 1: Upload a grid to Plotly, then attach Metadata to it
         ```
-        from plotly.grid_objs import Grid, Column
-        import plotly.plotly as py
+        from new_plotly.grid_objs import Grid, Column
+        import new_plotly.new_plotly as py
         column_1 = Column([1, 2, 3], 'time')
         column_2 = Column([4, 2, 5], 'voltage')
         grid = Grid([column_1, column_2])
@@ -1332,7 +1332,7 @@ class meta_ops:
 
         Usage example 2: Upload Metadata to an existing Plotly grid
         ```
-        import plotly.plotly as py
+        import new_plotly.new_plotly as py
 
         grid_url = 'https://plotly.com/~chris/3143'
 
@@ -1368,7 +1368,7 @@ def parse_grid_id_args(grid, grid_url):
         raise exceptions.InputError(
             "One of the two keyword arguments is required:\n"
             "    `grid` or `grid_url`\n\n"
-            "grid: a plotly.graph_objs.Grid object that has already\n"
+            "grid: a new_plotly.graph_objs.Grid object that has already\n"
             "    been uploaded to Plotly.\n\n"
             "grid_url: the url where the grid can be accessed on\n"
             "    Plotly, e.g. 'https://plotly.com/~chris/3043'\n\n"
@@ -1571,12 +1571,12 @@ class dashboard_ops:
     Plotly Dashboards are JSON blobs. They are made up by a bunch of
     containers which contain either empty boxes or boxes with file urls.
     For more info on Dashboard objects themselves, run
-    `help(plotly.dashboard_objs)`.
+    `help(new_plotly.dashboard_objs)`.
 
     Example 1: Upload Simple Dashboard
     ```
-    import plotly.plotly as py
-    import plotly.dashboard_objs as dashboard
+    import new_plotly.new_plotly as py
+    import new_plotly.dashboard_objs as dashboard
     box_1 = {
         'type': 'box',
         'boxType': 'plot',
@@ -1603,8 +1603,8 @@ class dashboard_ops:
     Example 2: Retreive Dashboard from Plotly
     ```
     # works if you have at least one dashboard in your files
-    import plotly.plotly as py
-    import plotly.dashboard_objs as dashboard
+    import new_plotly.new_plotly as py
+    import new_plotly.dashboard_objs as dashboard
 
     dboard_names = get_dashboard_names()
     first_dboard = get_dashboard(dboard_names[0])
@@ -1619,7 +1619,7 @@ class dashboard_ops:
         BETA function for uploading/overwriting dashboards to Plotly.
 
         :param (dict) dashboard: the JSON dashboard to be uploaded. Use
-            plotly.dashboard_objs.dashboard_objs to create a Dashboard
+            new_plotly.dashboard_objs.dashboard_objs to create a Dashboard
             object.
         :param (str) filename: the name of the dashboard to be saved in
             your Plotly account. Will overwrite a dashboard of the same
@@ -1713,7 +1713,7 @@ class presentation_ops:
         Function for uploading presentations to Plotly.
 
         :param (dict) presentation: the JSON presentation to be uploaded. Use
-            plotly.presentation_objs.Presentation to create presentations
+            new_plotly.presentation_objs.Presentation to create presentations
             from a Markdown-like string.
         :param (str) filename: the name of the presentation to be saved in
             your Plotly account. Will overwrite a presentation of the same
@@ -1912,21 +1912,21 @@ def create_animations(figure, filename=None, sharing="public", auto_open=True):
 
     Creates an animated plot using 'frames' alongside 'data' and 'layout'.
     This BETA endpoint is subject to deprecation in the future. In relation
-    to `plotly.plotly.plot`, folder-creation and overwriting are not supported
+    to `new_plotly.new_plotly.plot`, folder-creation and overwriting are not supported
     but creating a plot with or without animations via frames is supported.
 
     :param (str) filename: if set to 'None', an automatically-generated plot
         name will be created. Does not support folder creation, meaning that
         a folder of the form 'folder/name' will NOT create a the folder and
         place the plot in it.
-    :param (str) sharing: see `plotly.plotly.plot()` doc string.
+    :param (str) sharing: see `new_plotly.new_plotly.plot()` doc string.
     :param (bool) auto_open: if True, opens plot in the browser. If False,
         returns the url for the plot instead.
 
     Example 1: Simple Animation
     ```
-    import plotly.plotly as py
-    from plotly.grid_objs import Grid, Column
+    import new_plotly.new_plotly as py
+    from new_plotly.grid_objs import Grid, Column
 
     column_1 = Column([0.5], 'x')
     column_2 = Column([0.5], 'y')
@@ -1985,8 +1985,8 @@ def create_animations(figure, filename=None, sharing="public", auto_open=True):
 
     Example 2: Growing Circles Animation
     ```
-    import plotly.plotly as py
-    from plotly.grid_objs import Grid, Column
+    import new_plotly.new_plotly as py
+    from new_plotly.grid_objs import Grid, Column
 
     column_1 = Column([0.9, 1.1], 'x')
     column_2 = Column([1.0, 1.0], 'y')
@@ -2081,7 +2081,7 @@ def icreate_animations(figure, filename=None, sharing="public", auto_open=False)
     """
     Create a unique url for this animated plot in Plotly and open in IPython.
 
-    This function is based off `plotly.plotly.iplot`. See `plotly.plotly.
+    This function is based off `new_plotly.new_plotly.iplot`. See `new_plotly.new_plotly.
     create_animations` Doc String for param descriptions.
     """
     from plotly.basedatatypes import BaseFigure, BaseLayoutType

@@ -7,12 +7,12 @@ from codegen.utils import PlotlyNode, write_source_py
 
 def get_typing_type(plotly_type, array_ok=False):
     """
-    Get Python type corresponding to a valType string from the plotly schema
+    Get Python type corresponding to a valType string from the new_plotly schema
 
     Parameters
     ----------
     plotly_type : str
-        a plotly datatype string
+        a new_plotly datatype string
     array_ok : bool
         Whether lists/arrays are permitted
     Returns
@@ -37,7 +37,7 @@ def get_typing_type(plotly_type, array_ok=False):
     elif plotly_type == "boolean":
         pytype = "bool"
     else:
-        raise ValueError("Unknown plotly type: %s" % plotly_type)
+        raise ValueError("Unknown new_plotly type: %s" % plotly_type)
 
     if array_ok:
         return f"{pytype}|numpy.ndarray"
@@ -68,14 +68,14 @@ def build_datatype_py(node):
     # Handle template traces
     # ----------------------
     # We want template trace/layout classes like
-    # plotly.graph_objs.layout.template.data.Scatter to map to the
-    # corresponding trace/layout class (e.g. plotly.graph_objs.Scatter).
+    # new_plotly.graph_objs.layout.template.data.Scatter to map to the
+    # corresponding trace/layout class (e.g. new_plotly.graph_objs.Scatter).
     # So rather than generate a class definition, we just import the
     # corresponding trace/layout class
     if node.parent_path_str == "layout.template.data":
-        return f"from plotly.graph_objs import {node.name_datatype_class}"
+        return f"from new_plotly.graph_objs import {node.name_datatype_class}"
     elif node.path_str == "layout.template.layout":
-        return "from plotly.graph_objs import Layout"
+        return "from new_plotly.graph_objs import Layout"
 
     # Extract node properties
     # -----------------------
@@ -90,7 +90,7 @@ def build_datatype_py(node):
     # Imports
     # -------
     buffer.write(
-        f"from plotly.basedatatypes "
+        f"from new_plotly.basedatatypes "
         f"import {node.name_base_datatype} as _{node.name_base_datatype}\n"
     )
     buffer.write(f"import copy as _copy\n")
@@ -144,7 +144,7 @@ class {datatype_class}(_{node.name_base_datatype}):\n"""
         -------
         dict
         \"\"\"
-        from plotly.validators.layout import ({validator_csv})
+        from new_plotly.validators.layout import ({validator_csv})
 
         return {subplot_dict_str}
         
@@ -172,13 +172,13 @@ class {datatype_class}(_{node.name_base_datatype}):\n"""
     for subtype_node in subtype_nodes:
         if subtype_node.is_array_element:
             prop_type = (
-                f"tuple[plotly.graph_objs{node.dotpath_str}."
+                f"tuple[new_plotly.graph_objs{node.dotpath_str}."
                 + f"{subtype_node.name_datatype_class}]"
             )
 
         elif subtype_node.is_compound:
             prop_type = (
-                f"plotly.graph_objs{node.dotpath_str}."
+                f"new_plotly.graph_objs{node.dotpath_str}."
                 + f"{subtype_node.name_datatype_class}"
             )
 
@@ -292,7 +292,7 @@ class {datatype_class}(_{node.name_base_datatype}):\n"""
     # ### Constructor Docstring ###
     header = f"Construct a new {datatype_class} object"
     class_name = (
-        f"plotly.graph_objs" f"{node.parent_dotpath_str}." f"{node.name_datatype_class}"
+        f"new_plotly.graph_objs" f"{node.parent_dotpath_str}." f"{node.name_datatype_class}"
     )
 
     extras = [
@@ -486,7 +486,7 @@ def add_docstring(
     buffer : StringIO
         Buffer to write to
     node : PlotlyNode
-        Compound datatype plotly node for which to write docstring
+        Compound datatype new_plotly node for which to write docstring
     header :
         Top-level header for docstring that will preceded the input node's
         own description. Header should be < 71 characters long

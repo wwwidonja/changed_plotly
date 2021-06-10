@@ -1,7 +1,7 @@
 import os
 
 PLOTLY_DIR = os.environ.get(
-    "PLOTLY_DIR", os.path.join(os.path.expanduser("~"), ".plotly")
+    "PLOTLY_DIR", os.path.join(os.path.expanduser("~"), ".new_plotly")
 )
 TEST_FILE = os.path.join(PLOTLY_DIR, ".permission_test")
 

@@ -18,7 +18,7 @@ import versioneer
 
 here = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(here)))
-node_root = os.path.join(project_root, "packages", "javascript", "jupyterlab-plotly")
+node_root = os.path.join(project_root, "packages", "javascript", "jupyterlab-new_plotly")
 is_repo = os.path.exists(os.path.join(project_root, ".git"))
 
 npm_path = os.pathsep.join(
@@ -41,14 +41,14 @@ if "--skip-npm" in sys.argv or os.environ.get("SKIP_NPM") is not None:
 else:
     skip_npm = False
 
-# Load plotly.js version from js/package.json
+# Load new_plotly.js version from js/package.json
 def plotly_js_version():
     path = os.path.join(
-        project_root, "packages", "javascript", "jupyterlab-plotly", "package.json"
+        project_root, "packages", "javascript", "jupyterlab-new_plotly", "package.json"
     )
     with open(path, "rt") as f:
         package_json = json.load(f)
-        version = package_json["dependencies"]["plotly.js"]
+        version = package_json["dependencies"]["new_plotly.js"]
         version = version.replace("^", "")
 
     return version
@@ -97,15 +97,15 @@ def update_package_data(distribution):
         distribution.data_files.extend(
             [
                 (
-                    "share/jupyter/labextensions/jupyterlab-plotly",
+                    "share/jupyter/labextensions/jupyterlab-new_plotly",
                     ["jupyterlab_plotly/labextension/package.json",],
                 ),
                 (
-                    "share/jupyter/labextensions/jupyterlab-plotly/static",
+                    "share/jupyter/labextensions/jupyterlab-new_plotly/static",
                     [os.path.join(labstatic, f) for f in os.listdir(labstatic)],
                 ),
                 (
-                    "share/jupyter/nbextensions/jupyterlab-plotly",
+                    "share/jupyter/nbextensions/jupyterlab-new_plotly",
                     [
                         "jupyterlab_plotly/nbextension/extension.js",
                         "jupyterlab_plotly/nbextension/index.js",
@@ -195,7 +195,7 @@ class NPM(Command):
             if not os.path.exists(t):
                 msg = "Missing file: %s" % t
                 if not has_npm:
-                    msg += "\nnpm is required to build a development version of jupyterlab-plotly"
+                    msg += "\nnpm is required to build a development version of jupyterlab-new_plotly"
                 raise ValueError(msg)
 
         # update package data in case this created new files
@@ -236,13 +236,13 @@ def overwrite_bundle(url):
 
     req = requests.get(url)
     assert req.status_code == 200
-    path = os.path.join(here, "plotly", "package_data", "plotly.min.js")
+    path = os.path.join(here, "new_plotly", "package_data", "new_plotly.min.js")
     with open(path, "wb") as f:
         f.write(req.content)
 
 
 def overwrite_plotlyjs_version_file(plotlyjs_version):
-    path = os.path.join(here, "plotly", "offline", "_plotlyjs_version.py")
+    path = os.path.join(here, "new_plotly", "offline", "_plotlyjs_version.py")
     with open(path, "w") as f:
         f.write(
             """\
@@ -256,7 +256,7 @@ __plotlyjs_version__ = "{plotlyjs_version}"
 
 
 def overwrite_plotlywidget_version_file(version):
-    path = os.path.join(here, "plotly", "_widget_version.py")
+    path = os.path.join(here, "new_plotly", "_widget_version.py")
     with open(path, "w") as f:
         f.write(
             """\
@@ -303,17 +303,17 @@ def get_latest_publish_build_info(repo, branch):
 def get_bundle_schema_urls(build_num):
     url = (
         "https://circleci.com/api/v1.1/project/github/"
-        "plotly/plotly.js/{build_num}/artifacts"
+        "new_plotly/new_plotly.js/{build_num}/artifacts"
     ).format(build_num=build_num)
 
     artifacts = request_json(url)
 
     # Find archive
-    archives = [a for a in artifacts if a.get("path", None) == "plotly.js.tgz"]
+    archives = [a for a in artifacts if a.get("path", None) == "new_plotly.js.tgz"]
     archive = archives[0]
 
     # Find bundle
-    bundles = [a for a in artifacts if a.get("path", None) == "dist/plotly.min.js"]
+    bundles = [a for a in artifacts if a.get("path", None) == "dist/new_plotly.min.js"]
     bundle = bundles[0]
 
     # Find schema
@@ -354,17 +354,17 @@ class UpdateBundleCommand(Command):
     def run(self):
         url = (
             "https://raw.githubusercontent.com/plotly/plotly.js/"
-            "v%s/dist/plotly.min.js" % plotly_js_version()
+            "v%s/dist/new_plotly.min.js" % plotly_js_version()
         )
         overwrite_bundle(url)
 
-        # Write plotly.js version file
+        # Write new_plotly.js version file
         plotlyjs_version = plotly_js_version()
         overwrite_plotlyjs_version_file(plotlyjs_version)
 
 
 class UpdatePlotlyJsCommand(Command):
-    description = "Update project to a new version of plotly.js"
+    description = "Update project to a new version of new_plotly.js"
     user_options = []
 
     def initialize_options(self):
@@ -380,7 +380,7 @@ class UpdatePlotlyJsCommand(Command):
 
 
 class UpdateBundleSchemaDevCommand(Command):
-    description = "Update the plotly.js schema and bundle from master"
+    description = "Update the new_plotly.js schema and bundle from master"
     user_options = []
 
     def initialize_options(self):
@@ -404,17 +404,17 @@ class UpdateBundleSchemaDevCommand(Command):
         # Update schema in package data
         overwrite_schema(schema_url)
 
-        # Update plotly.js url in package.json
+        # Update new_plotly.js url in package.json
         package_json_path = os.path.join(node_root, "package.json")
         with open(package_json_path, "r") as f:
             package_json = json.load(f)
 
         # Replace version with bundle url
-        package_json["dependencies"]["plotly.js"] = archive_url
+        package_json["dependencies"]["new_plotly.js"] = archive_url
         with open(package_json_path, "w") as f:
             json.dump(package_json, f, indent=2)
 
-        # update plotly.js version in _plotlyjs_version
+        # update new_plotly.js version in _plotlyjs_version
         rev = build_info["vcs_revision"]
         date = build_info["committer_date"]
         version = "_".join([self.devrepo, self.devbranch, date[:10], rev[:8]])
@@ -422,14 +422,14 @@ class UpdateBundleSchemaDevCommand(Command):
 
 
 class UpdatePlotlyJsDevCommand(Command):
-    description = "Update project to a new development version of plotly.js"
+    description = "Update project to a new development version of new_plotly.js"
     user_options = [
         ("devrepo=", None, "Repository name"),
         ("devbranch=", None, "branch or pull/number"),
     ]
 
     def initialize_options(self):
-        self.devrepo = "plotly/plotly.js"
+        self.devrepo = "new_plotly/new_plotly.js"
         self.devbranch = "master"
 
     def finalize_options(self):
@@ -442,7 +442,7 @@ class UpdatePlotlyJsDevCommand(Command):
 
 
 class UpdatePlotlywidgetVersionCommand(Command):
-    description = "Update package.json version of jupyterlab-plotly"
+    description = "Update package.json version of jupyterlab-new_plotly"
 
     user_options = []
 
@@ -453,9 +453,9 @@ class UpdatePlotlywidgetVersionCommand(Command):
         pass
 
     def run(self):
-        from plotly._version import git_pieces_from_vcs, render
+        from new_plotly._version import git_pieces_from_vcs, render
 
-        # Update plotly.js url in package.json
+        # Update new_plotly.js url in package.json
         package_json_path = os.path.join(node_root, "package.json")
 
         with open(package_json_path, "r") as f:
@@ -476,20 +476,20 @@ class UpdatePlotlywidgetVersionCommand(Command):
 
 graph_objs_packages = [
     d[0].replace("/", ".")
-    for d in os.walk("plotly/graph_objs")
+    for d in os.walk("new_plotly/graph_objs")
     if not d[0].endswith("__pycache__")
 ]
 
 
 validator_packages = [
     d[0].replace("/", ".")
-    for d in os.walk("plotly/validators")
+    for d in os.walk("new_plotly/validators")
     if not d[0].endswith("__pycache__")
 ]
 
 versioneer_cmds = versioneer.get_cmdclass()
 setup(
-    name="plotly",
+    name="new_plotly",
     version=versioneer.get_version(),
     use_2to3=False,
     author="Chris P",
@@ -513,20 +513,20 @@ setup(
     license="MIT",
     packages=[
         "jupyterlab_plotly",
-        "plotly",
-        "plotly.plotly",
-        "plotly.offline",
-        "plotly.io",
-        "plotly.matplotlylib",
-        "plotly.matplotlylib.mplexporter",
-        "plotly.matplotlylib.mplexporter.renderers",
-        "plotly.figure_factory",
-        "plotly.data",
-        "plotly.colors",
-        "plotly.express",
-        "plotly.express.data",
-        "plotly.express.colors",
-        "plotly.graph_objects",
+        "new_plotly",
+        "new_plotly.new_plotly",
+        "new_plotly.offline",
+        "new_plotly.io",
+        "new_plotly.matplotlylib",
+        "new_plotly.matplotlylib.mplexporter",
+        "new_plotly.matplotlylib.mplexporter.renderers",
+        "new_plotly.figure_factory",
+        "new_plotly.data",
+        "new_plotly.colors",
+        "new_plotly.express",
+        "new_plotly.express.data",
+        "new_plotly.express.colors",
+        "new_plotly.graph_objects",
         "_plotly_utils",
         "_plotly_utils.colors",
         "_plotly_future_",
@@ -534,7 +534,7 @@ setup(
     + graph_objs_packages
     + validator_packages,
     package_data={
-        "plotly": [
+        "new_plotly": [
             "package_data/*",
             "package_data/templates/*",
             "package_data/datasets/*",
@@ -545,7 +545,7 @@ setup(
             "labextension/static/*",
         ],
     },
-    data_files=[("etc/jupyter/nbconfig/notebook.d", ["jupyterlab-plotly.json"]),],
+    data_files=[("etc/jupyter/nbconfig/notebook.d", ["jupyterlab-new_plotly.json"]),],
     install_requires=["tenacity>=6.2.0", "six"],
     zip_safe=False,
     cmdclass=dict(

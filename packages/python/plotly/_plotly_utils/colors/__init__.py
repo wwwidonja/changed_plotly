@@ -322,7 +322,7 @@ def validate_colors(colors, colortype="tuple"):
             colors_list = colorscale_to_colors(PLOTLY_SCALES[colors])
             # TODO: fix _gantt.py/_scatter.py so that they can accept the
             # actual colorscale and not just a list of the first and last
-            # color in the plotly colorscale. In resolving this issue we
+            # color in the new_plotly colorscale. In resolving this issue we
             # will be removing the immediate line below
             colors = [colors_list[0]] + [colors_list[-1]]
         elif "rgb" in colors or "#" in colors:
@@ -429,7 +429,7 @@ def convert_colors_to_same_type(
     be coverted to the selected colortype. If colors is None, then there is an
     option to return portion of the DEFAULT_PLOTLY_COLORS
 
-    :param (str|tuple|list) colors: either a plotly scale name, an rgb or hex
+    :param (str|tuple|list) colors: either a new_plotly scale name, an rgb or hex
         color, a color tuple or a list/tuple of colors
     :param (list) scale: see docs for validate_scale_values()
 
@@ -842,7 +842,7 @@ def sample_colorscale(colorscale, samplepoints, low=0.0, high=1.0, colortype="rg
     Interpolates between colors in a colorscale to find the specific colors
     corresponding to the specified sample values. The colorscale can be specified
     as a list of `[scale, color]` pairs, as a list of colors, or as a named
-    plotly colorscale. The samplepoints can be specefied as an iterable of specific
+    new_plotly colorscale. The samplepoints can be specefied as an iterable of specific
     points in the range [0.0, 1.0], or as an integer number of points which will
     be spaced equally between the low value (default 0.0) and the high value
     (default 1.0). The output is a list of colors, formatted according to the

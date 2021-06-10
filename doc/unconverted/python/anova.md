@@ -122,9 +122,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Anova.ipynb', 'python/anova/', 'Anova | plotly',
+    'python-Anova.ipynb', 'python/anova/', 'Anova | new_plotly',
     'Learn how to perform a one and two way ANOVA test using Python.',
-    title='Anova in Python | plotly',
+    title='Anova in Python | new_plotly',
     name='Anova',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='statistics', order=8,

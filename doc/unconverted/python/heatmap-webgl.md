@@ -90,9 +90,9 @@ display(HTML('<link rel="stylesheet" type="text/csshref="http://help.plot.ly/doc
 
 import publisher
 publisher.publish(
-    'heatmap-webgl.ipynb', 'python/heatmap-webgl/', 'WebGL based Heatmaps | plotly',
+    'heatmap-webgl.ipynb', 'python/heatmap-webgl/', 'WebGL based Heatmaps | new_plotly',
     'How to make webGL based heatmaps in Python with Plotly.',
-    title = 'Python Heatmaps WebGL | plotly',
+    title = 'Python Heatmaps WebGL | new_plotly',
     name = 'WebGL Heatmaps',
     has_thumbnail='true', thumbnail='thumbnail/heatmap-webgl.jpg',
     language='python',

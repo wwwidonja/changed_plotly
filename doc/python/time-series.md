@@ -42,7 +42,7 @@ For financial applications, Plotly can also be used to create [Candlestick chart
 Plotly auto-sets the axis type to a date format when the corresponding data are either ISO-formatted date strings or if they're a [date pandas column](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html) or [datetime NumPy array](https://docs.scipy.org/doc/numpy/reference/arrays.datetime.html).
 
 ```python
-# Using plotly.express
+# Using new_plotly.express
 import plotly.express as px
 
 df = px.data.stocks()
@@ -208,7 +208,7 @@ fig.show()
 The data range can be set manually using either `datetime.datetime` objects, or date strings.
 
 ```python
-# Using plotly.express
+# Using new_plotly.express
 import plotly.express as px
 
 import pandas as pd

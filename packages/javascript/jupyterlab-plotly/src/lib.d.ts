@@ -1,8 +1,8 @@
-import { Data, Layout } from "plotly.js";
-import { Layout } from "plotly.js/dist/plotly";
+import { Data, Layout } from "new_plotly.js";
+import { Layout } from "new_plotly.js/dist/new_plotly";
 
 declare module "plotly.js/dist/plotly" {
-  export * from "plotly.js";
+  export * from "new_plotly.js";
   export type Frame = { [key: string]: any };
   export function addFrames(root: Plotly.Root, frames: Frame[]): Promise<void>;
   export function animate(root: Plotly.Root): void;

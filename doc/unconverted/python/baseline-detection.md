@@ -99,9 +99,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Baseline-Detection.ipynb', 'python/baseline-detection/', 'Baseline Detection | plotly',
+    'python-Baseline-Detection.ipynb', 'python/baseline-detection/', 'Baseline Detection | new_plotly',
     'Learn how to detect baselines on data in Python.',
-    title='Baseline Detection in Python | plotly',
+    title='Baseline Detection in Python | new_plotly',
     name='Baseline Detection',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='peak-analysis', order=1,

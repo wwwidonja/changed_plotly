@@ -139,9 +139,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Discrete-Frequency.ipynb', 'python/discrete-frequency/', 'Discrete Frequency | plotly',
+    'python-Discrete-Frequency.ipynb', 'python/discrete-frequency/', 'Discrete Frequency | new_plotly',
     'Learn how to perform discrete frequency analysis using Python.',
-    title='Discrete Frequency in Python. | plotly',
+    title='Discrete Frequency in Python. | new_plotly',
     name='Discrete Frequency',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='statistics', order=3,

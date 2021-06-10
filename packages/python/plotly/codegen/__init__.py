@@ -29,7 +29,7 @@ from codegen.validators import (
 
 # Import notes
 # ------------
-# Nothing from the plotly/ package should be imported during code
+# Nothing from the new_plotly/ package should be imported during code
 # generation. This introduces a lot of complexity regarding when imports
 # happen relative to when various stages of code generation occur.  Instead,
 # helpers that are only needed during code generation should reside in the
@@ -60,7 +60,7 @@ This should be a dict with format: `{'layout': layoutTemplate, 'data':
 matching the structure of `figure.layout` and `traceTemplate` is a dict
 matching the structure of the trace with type `trace_type` (e.g. 'scatter').
 Alternatively, this may be specified as an instance of
-plotly.graph_objs.layout.Template.
+new_plotly.graph_objs.layout.Template.
 
 Trace templates are applied cyclically to
 traces of each type. Container arrays (eg `annotations`) have special
@@ -91,7 +91,7 @@ def perform_codegen():
     # (relative to project root)
     abs_file_path = opath.realpath(__file__)
     packages_py = opath.dirname(opath.dirname(opath.dirname(abs_file_path)))
-    outdir = opath.join(packages_py, "plotly", "plotly")
+    outdir = opath.join(packages_py, "new_plotly", "new_plotly")
 
     # Delete prior codegen output
     # ---------------------------
@@ -103,17 +103,17 @@ def perform_codegen():
     if opath.exists(graph_objs_pkgdir):
         shutil.rmtree(graph_objs_pkgdir)
 
-    # plotly/datatypes is not used anymore, but was at one point so we'll
+    # new_plotly/datatypes is not used anymore, but was at one point so we'll
     # still delete it if we find it in case a developer is upgrading from an
     # older version
     datatypes_pkgdir = opath.join(outdir, "datatypes")
     if opath.exists(datatypes_pkgdir):
         shutil.rmtree(datatypes_pkgdir)
 
-    # Load plotly schema
+    # Load new_plotly schema
     # ------------------
     plot_schema_path = opath.join(
-        packages_py, "plotly", "codegen", "resources", "plot-schema.json"
+        packages_py, "new_plotly", "codegen", "resources", "plot-schema.json"
     )
 
     with open(plot_schema_path, "r") as f:
@@ -253,7 +253,7 @@ def perform_codegen():
                 f".{node.name_undercase}"
             )
 
-    # ### Write plotly/graph_objs/graph_objs.py ###
+    # ### Write new_plotly/graph_objs/graph_objs.py ###
     # This if for backward compatibility. It just imports everything from
     # graph_objs/__init__.py
     write_graph_objs_graph_objs(outdir)

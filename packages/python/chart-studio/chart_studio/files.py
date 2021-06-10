@@ -19,7 +19,7 @@ FILE_CONTENT = {
     },
     CONFIG_FILE: {
         "plotly_domain": "https://plotly.com",
-        "plotly_streaming_domain": "stream.plotly.com",
+        "plotly_streaming_domain": "stream.new_plotly.com",
         "plotly_api_domain": "https://api.plotly.com",
         "plotly_ssl_verification": True,
         "plotly_proxy_authorization": False,

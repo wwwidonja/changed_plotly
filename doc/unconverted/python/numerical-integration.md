@@ -85,9 +85,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Numerical_Integration.ipynb', 'python/numerical-integration/', 'Numerical Integration | plotly',
+    'python_Numerical_Integration.ipynb', 'python/numerical-integration/', 'Numerical Integration | new_plotly',
     'Learn how to integrate a sequence or list of values numerically',
-    title='Numerical Integration in Python. | plotly',
+    title='Numerical Integration in Python. | new_plotly',
     name='Numerical Integration',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=7,

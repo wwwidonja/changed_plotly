@@ -186,7 +186,7 @@ display(HTML('<link rel="stylesheet" type="text/css" href="https://help.plot.ly/
 import publisher
 publisher.publish('pdf-reports.ipynb', 'python/pdf-reports/', 'PDF Reports'
                   'How to make PDF reports with Python and Plotly Graphs.',
-                  title = 'Python PDF Reports | plotly',
+                  title = 'Python PDF Reports | new_plotly',
                   name = 'PDF Reports',
                   has_thumbnail='true', thumbnail='thumbnail/ipython_10_pdf_report.jpg',
                   language='python', page_type='example_index',

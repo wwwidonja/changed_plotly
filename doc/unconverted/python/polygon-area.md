@@ -175,9 +175,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Polygon_Area.ipynb', 'python/polygon-area/', 'Polygon Area | plotly',
+    'python_Polygon_Area.ipynb', 'python/polygon-area/', 'Polygon Area | new_plotly',
     'Learn how to find the area of any simple polygon',
-    title='Polygon Area in Python. | plotly',
+    title='Polygon Area in Python. | new_plotly',
     name='Polygon Area',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=8,

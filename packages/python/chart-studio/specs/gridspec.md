@@ -137,7 +137,7 @@ If you have the grid
 >> Scatter(x=[1,2,3], y=[2,1,2])
 "High five!"
 >> Scatter(xsrc=[1,2,3], ysrc=[2,1,2])
-"PlotlyTypeException: xrc and ysrc must be type string or plotly.grid_obj.Column"
+"PlotlyTypeException: xrc and ysrc must be type string or new_plotly.grid_obj.Column"
 >> Scatter(xsrc=Column('myCol', [1,2,3]), ysrc=Column('otherCol', [2,1,2]))
 "PlotlyFileException: you must upload a grid before you can reference it in plots"
 >> Scatter(xsrc=localGrid[0], ysrc=localGrid[1])

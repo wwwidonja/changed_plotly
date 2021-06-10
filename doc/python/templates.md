@@ -62,7 +62,7 @@ import plotly.express as px
 df = px.data.gapminder()
 df_2007 = df.query("year==2007")
 
-for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
+for template in ["new_plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
     fig = px.scatter(df_2007,
                      x="gdpPercap", y="lifeExp", size="pop", color="continent",
                      log_x=True, size_max=60,
@@ -88,7 +88,7 @@ fig = go.Figure(
         height=500,
     ))
 
-for template in ["plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
+for template in ["new_plotly", "plotly_white", "plotly_dark", "ggplot2", "seaborn", "simple_white", "none"]:
     fig.update_layout(template=template, title="Mt Bruno Elevation: '%s' theme" % template)
     fig.show()
 ```
@@ -379,7 +379,7 @@ pio.templates["draft"] = go.layout.Template(
         )
     ]
 )
-pio.templates.default = "plotly+draft"
+pio.templates.default = "new_plotly+draft"
 
 fig = go.Figure()
 fig.show()
@@ -407,7 +407,7 @@ pio.templates["draft"] = go.layout.Template(
         )
     ]
 )
-pio.templates.default = "plotly+draft"
+pio.templates.default = "new_plotly+draft"
 
 df = px.data.gapminder()
 df_2007 = df.query("year==2007")
@@ -472,6 +472,6 @@ It may be useful to examine the contents and structure of the built-in templates
 
 ```python
 import plotly.io as pio
-plotly_template = pio.templates["plotly"]
+plotly_template = pio.templates["new_plotly"]
 plotly_template.layout
 ```

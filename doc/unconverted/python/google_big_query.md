@@ -529,7 +529,7 @@ import publisher
 publisher.publish(
     'BigQuery-Plotly.ipynb', 'python/google_big_query/', 'Google Big-Query',
     'How to make your-tutorial-chart plots in Python with Plotly.',
-    title = 'Google Big Query | plotly',
+    title = 'Google Big Query | new_plotly',
     has_thumbnail='true', thumbnail='thumbnail/bigquery2.jpg',
     language='python', page_type='example_index',
     display_as='databases', order=7)

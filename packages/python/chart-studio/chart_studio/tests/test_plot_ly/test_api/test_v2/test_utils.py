@@ -157,7 +157,7 @@ class GetHeadersTest(PlotlyApiTestCase):
     def test_normal_auth(self):
         headers = utils.get_headers()
         expected_headers = {
-            "plotly-client-platform": "python {}".format(version.stable_semver()),
+            "new_plotly-client-platform": "python {}".format(version.stable_semver()),
             "authorization": "Basic Zm9vOmJhcg==",
             "content-type": "application/json",
         }
@@ -167,9 +167,9 @@ class GetHeadersTest(PlotlyApiTestCase):
         sign_in(self.username, self.api_key, plotly_proxy_authorization=True)
         headers = utils.get_headers()
         expected_headers = {
-            "plotly-client-platform": "python {}".format(version.stable_semver()),
+            "new_plotly-client-platform": "python {}".format(version.stable_semver()),
             "authorization": "Basic Y25ldDpob29wbGE=",
-            "plotly-authorization": "Basic Zm9vOmJhcg==",
+            "new_plotly-authorization": "Basic Zm9vOmJhcg==",
             "content-type": "application/json",
         }
         self.assertEqual(headers, expected_headers)

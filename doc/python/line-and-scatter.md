@@ -233,7 +233,7 @@ fig = go.Figure(data=go.Scatter(
     marker=dict(
         size=16,
         color=np.random.randn(500), #set color equal to a variable
-        colorscale='Viridis', # one of plotly colorscales
+        colorscale='Viridis', # one of new_plotly colorscales
         showscale=True
     )
 ))

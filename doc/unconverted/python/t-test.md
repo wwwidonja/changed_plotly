@@ -143,9 +143,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-T-Test.ipynb', 'python/t-test/', 'T-Test | plotly',
+    'python-T-Test.ipynb', 'python/t-test/', 'T-Test | new_plotly',
     'Learn how to perform a one sample and two sample t-test using Python.',
-    title='T-Test in Python. | plotly',
+    title='T-Test in Python. | new_plotly',
     name='T-Test',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='statistics', order=7,

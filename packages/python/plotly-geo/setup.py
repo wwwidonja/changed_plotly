@@ -9,7 +9,7 @@ def readme():
 
 
 setup(
-    name="plotly-geo",
+    name="new_plotly-geo",
     version="1.0.0",
     author="Chris P",
     author_email="chris@plot.ly",
@@ -17,7 +17,7 @@ setup(
     maintainer_email="jon@plot.ly",
     url="https://plot.ly/python/",
     project_urls={"Github": "https://github.com/plotly/plotly.py"},
-    description="geo shape files for use with plotly.py",
+    description="geo shape files for use with new_plotly.py",
     long_description=readme(),
     long_description_content_type="text/markdown",
     classifiers=[

@@ -25,13 +25,13 @@ class Column(object):
     Columns make up Plotly Grids and can be the source of
     data for Plotly Graphs.
     They have a name and an array of data.
-    They can be uploaded to Plotly with the `plotly.plotly.grid_ops`
+    They can be uploaded to Plotly with the `new_plotly.new_plotly.grid_ops`
     class.
 
     Usage example 1: Upload a set of columns as a grid to Plotly
     ```
-    from plotly.grid_objs import Grid, Column
-    import plotly.plotly as py
+    from new_plotly.grid_objs import Grid, Column
+    import new_plotly.new_plotly as py
     column_1 = Column([1, 2, 3], 'time')
     column_2 = Column([4, 2, 5], 'voltage')
     grid = Grid([column_1, column_2])
@@ -41,9 +41,9 @@ class Column(object):
     Usage example 2: Make a graph based with data that is sourced
                      from a newly uploaded Plotly columns
     ```
-    import plotly.plotly as py
-    from plotly.grid_objs import Grid, Column
-    from plotly.graph_objs import Scatter
+    import new_plotly.new_plotly as py
+    from new_plotly.grid_objs import Grid, Column
+    from new_plotly.graph_objs import Scatter
     # Upload a grid
     column_1 = Column([1, 2, 3], 'time')
     column_2 = Column([4, 2, 5], 'voltage')
@@ -96,12 +96,12 @@ class Grid(MutableSequence):
     uploaded, appended to, and can source the data for Plotly
     graphs.
 
-    A plotly.grid_objs.Grid object is essentially a list.
+    A new_plotly.grid_objs.Grid object is essentially a list.
 
     Usage example 1: Upload a set of columns as a grid to Plotly
     ```
-    from plotly.grid_objs import Grid, Column
-    import plotly.plotly as py
+    from new_plotly.grid_objs import Grid, Column
+    import new_plotly.new_plotly as py
     column_1 = Column([1, 2, 3], 'time')
     column_2 = Column([4, 2, 5], 'voltage')
     grid = Grid([column_1, column_2])
@@ -111,9 +111,9 @@ class Grid(MutableSequence):
     Usage example 2: Make a graph based with data that is sourced
                      from a newly uploaded Plotly columns
     ```
-    import plotly.plotly as py
-    from plotly.grid_objs import Grid, Column
-    from plotly.graph_objs import Scatter
+    import new_plotly.new_plotly as py
+    from new_plotly.grid_objs import Grid, Column
+    from new_plotly.graph_objs import Scatter
     # Upload a grid
     column_1 = Column([1, 2, 3], 'time')
     column_2 = Column([4, 2, 5], 'voltage')
@@ -129,7 +129,7 @@ class Grid(MutableSequence):
 
     def __init__(self, columns_or_json, fid=None):
         """
-        Initialize a grid with an iterable of `plotly.grid_objs.Column`
+        Initialize a grid with an iterable of `new_plotly.grid_objs.Column`
         objects or a json/dict describing a grid. See second usage example
         below for the necessary structure of the dict.
 

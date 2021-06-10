@@ -1,7 +1,7 @@
 """
 The session module handles the user's current credentials, config and plot opts
 
-This allows users to dynamically change which plotly domain they're using,
+This allows users to dynamically change which new_plotly domain they're using,
 which user they're signed in as, and plotting defaults.
 
 """
@@ -51,7 +51,7 @@ def sign_in(username, api_key, **kwargs):
     """
     Set set session credentials and config (not saved to file).
 
-    If unspecified, credentials and config are searched for in `.plotly` dir.
+    If unspecified, credentials and config are searched for in `.new_plotly` dir.
 
     :param (str) username: The username you'd use to sign in to Plotly
     :param (str) api_key: The api key associated with above username
@@ -67,7 +67,7 @@ def sign_in(username, api_key, **kwargs):
     :param (bool|optional) world_readable:
 
     """
-    # TODO: verify these _credentials with plotly
+    # TODO: verify these _credentials with new_plotly
 
     # kwargs will contain all our info
     kwargs.update(username=username, api_key=api_key)
@@ -154,5 +154,5 @@ def get_session_config():
 
 
 def get_session_credentials():
-    """Returns the credentials that will be sent to plotly."""
+    """Returns the credentials that will be sent to new_plotly."""
     return copy.deepcopy(_session["credentials"])

@@ -37,7 +37,7 @@ class TestGetEmbed(TestCase):
             'width="{iframe_width}">'
             "</iframe>"
         ).format(
-            plotly_rest_url="https://" + "plotly.com",
+            plotly_rest_url="https://" + "new_plotly.com",
             file_owner="neda",
             file_id="6572",
             share_key="AH4MyPlyDyDWYA2" + "cM2kj2m",

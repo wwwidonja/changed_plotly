@@ -414,7 +414,7 @@ def plotly():
     return template
 
 
-builders["plotly"] = plotly
+builders["new_plotly"] = plotly
 
 
 def plotly_white():

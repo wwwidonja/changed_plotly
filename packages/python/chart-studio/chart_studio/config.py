@@ -10,7 +10,7 @@ from chart_studio import session, tools
 
 
 def get_credentials():
-    """Returns the credentials that will be sent to plotly."""
+    """Returns the credentials that will be sent to new_plotly."""
     credentials = tools.get_credentials_file()
     session_credentials = session.get_session_credentials()
     for credentials_key in credentials:

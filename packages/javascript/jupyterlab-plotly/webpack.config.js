@@ -30,7 +30,7 @@ module.exports = [
         "..",
         "..",
         "python",
-        "plotly",
+        "new_plotly",
         "jupyterlab_plotly",
         "nbextension"
       ),
@@ -45,7 +45,7 @@ module.exports = [
   },
 
   /**
-   * Embeddable jupyterlab-plotly bundle
+   * Embeddable jupyterlab-new_plotly bundle
    *
    * This bundle is almost identical to the notebook extension bundle. The only
    * difference is in the configuration of the webpack public path for the

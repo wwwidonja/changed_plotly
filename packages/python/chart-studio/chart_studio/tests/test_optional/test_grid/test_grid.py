@@ -22,7 +22,7 @@ class TestDataframeToGrid(TestCase):
         df = pd.DataFrame([[1, "a"], [2, "b"]], columns=["col_1", "col_1"])
 
         expected_message = (
-            "Yikes, plotly grids currently "
+            "Yikes, new_plotly grids currently "
             "can't have duplicate column names. Rename "
             'the column "{}" and try again.'.format("col_1")
         )

@@ -16,7 +16,7 @@ import os
 import sys
 import sphinx_bootstrap_theme
 
-# sys.path.insert(0, os.path.abspath("../packages/python/plotly"))
+# sys.path.insert(0, os.path.abspath("../packages/python/new_plotly"))
 
 
 # -- Project information -----------------------------------------------------
@@ -145,7 +145,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, "plotly.tex", "plotly Documentation", "plotly team", "manual")
+    (master_doc, "new_plotly.tex", "new_plotly Documentation", "new_plotly team", "manual")
 ]
 
 
@@ -153,7 +153,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "plotly", "plotly Documentation", [author], 1)]
+man_pages = [(master_doc, "new_plotly", "new_plotly Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -164,10 +164,10 @@ man_pages = [(master_doc, "plotly", "plotly Documentation", [author], 1)]
 texinfo_documents = [
     (
         master_doc,
-        "plotly",
-        "plotly Documentation",
+        "new_plotly",
+        "new_plotly Documentation",
         author,
-        "plotly",
+        "new_plotly",
         "One line description of project.",
         "Miscellaneous",
     )
@@ -206,4 +206,4 @@ todo_include_todos = True
 
 
 def setup(app):
-    app.add_stylesheet("plotly-style.css")  # also can be a full URL
+    app.add_stylesheet("new_plotly-style.css")  # also can be a full URL

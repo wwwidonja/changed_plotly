@@ -395,9 +395,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 !pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'dashboard-api.ipynb', 'python/create-online-dashboard/', 'Dashboard API | plotly',
+    'dashboard-api.ipynb', 'python/create-online-dashboard/', 'Dashboard API | new_plotly',
     'How to create and publish a dashboard with the Python API.',
-    title = 'Dashboard API | plotly',
+    title = 'Dashboard API | new_plotly',
     name = 'Dashboard API',
     thumbnail='thumbnail/dashboard.jpg', language='python',
     page_type='u-guide', has_thumbnail='true', display_as='legacy_charts',

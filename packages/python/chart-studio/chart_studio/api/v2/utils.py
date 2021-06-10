@@ -88,7 +88,7 @@ def get_headers():
 
     Users may have their own proxy layer and so we free up the `authorization`
     header for this purpose (instead adding the user authorization in a new
-    `plotly-authorization` header). See pull #239.
+    `new_plotly-authorization` header). See pull #239.
 
     :returns: (dict) Headers to add to a requests.request call.
 
@@ -98,7 +98,7 @@ def get_headers():
     creds = config.get_credentials()
 
     headers = {
-        "plotly-client-platform": "python {}".format(version.stable_semver()),
+        "new_plotly-client-platform": "python {}".format(version.stable_semver()),
         "content-type": "application/json",
     }
 
@@ -108,7 +108,7 @@ def get_headers():
     if config.get_config()["plotly_proxy_authorization"]:
         headers["authorization"] = proxy_auth
         if creds["username"] and creds["api_key"]:
-            headers["plotly-authorization"] = plotly_auth
+            headers["new_plotly-authorization"] = plotly_auth
     else:
         if creds["username"] and creds["api_key"]:
             headers["authorization"] = plotly_auth

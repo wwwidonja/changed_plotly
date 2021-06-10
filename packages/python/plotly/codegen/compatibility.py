@@ -65,7 +65,7 @@ def build_deprecated_datatypes_py():
     buffer.write(
         r"""
 warnings.filterwarnings('default',
-                        r'plotly\.graph_objs\.\w+ is deprecated',
+                        r'new_plotly\.graph_objs\.\w+ is deprecated',
                         DeprecationWarning)
 
 
@@ -110,15 +110,15 @@ def build_deprecation_message(class_name, base_type, new):
     new: list of str
         List of replacements that users should use instead.
         Replacements may be:
-            - A package string relative to plotly.graph_objs. In this case the
+            - A package string relative to new_plotly.graph_objs. In this case the
               replacement class is assumed to be named `class_name`.
               e.g. `new` == ['layout`] and `class_name` == 'XAxis` corresponds
-              to the 'plotly.graph_objs.layout.XAxis' class
+              to the 'new_plotly.graph_objs.layout.XAxis' class
             - String containing the package and class. The string is
               identified as containing a class name if the final name in the
               package string begins with an uppercase letter.
               e.g. `new` == ['Scatter'] corresponds to the
-              ['plotly.graph_objs.Scatter'] class.
+              ['new_plotly.graph_objs.Scatter'] class.
             - The literal string 'etc.'. This string is not interpreted as a
               package or class and is displayed to the user as-is to
               indicate that the list of replacement classes is not complete.
@@ -140,21 +140,21 @@ def build_deprecation_message(class_name, base_type, new):
             if not repl_is_class:
                 repl_parts.append(class_name)
 
-            # Add plotly.graph_objs prefix
-            full_class_str = ".".join(["plotly", "graph_objs"] + repl_parts)
+            # Add new_plotly.graph_objs prefix
+            full_class_str = ".".join(["new_plotly", "graph_objs"] + repl_parts)
             replacements.append(full_class_str)
 
     replacemens_str = "\n  - ".join(replacements)
 
     if base_type == list:
         return f"""\
-plotly.graph_objs.{class_name} is deprecated.
+new_plotly.graph_objs.{class_name} is deprecated.
 Please replace it with a list or tuple of instances of the following types
   - {replacemens_str}
 """
     else:
         return f"""\
-plotly.graph_objs.{class_name} is deprecated.
+new_plotly.graph_objs.{class_name} is deprecated.
 Please replace it with one of the following more specific types
   - {replacemens_str}
 """
@@ -186,12 +186,12 @@ def write_deprecated_datatypes(outdir):
 
 def write_graph_objs_graph_objs(outdir):
     """
-    Write the plotly/graph_objs/graph_objs.py file
+    Write the new_plotly/graph_objs/graph_objs.py file
 
-    This module just imports everything from the plotly.graph_objs package.
+    This module just imports everything from the new_plotly.graph_objs package.
     We write it for backward compatibility with legacy imports like:
 
-    from plotly.graph_objs import graph_objs
+    from new_plotly.graph_objs import graph_objs
 
     Parameters
     ----------
@@ -206,6 +206,6 @@ def write_graph_objs_graph_objs(outdir):
     with open(filepath, "wt") as f:
         f.write(
             """\
-from plotly.graph_objs import *
+from new_plotly.graph_objs import *
 """
         )

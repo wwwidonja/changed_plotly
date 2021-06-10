@@ -44,8 +44,8 @@ In order to follow the examples in this documentation site, you should have the 
 Most `import` problems or `AttributeError`s can be traced back to having multiple versions of `plotly` installed, for example once with `conda` and once with `pip`. It's often worthwhile to uninstall with both methods before following the [Getting Started](/python/getting-started) instructions from scratch with one or the other. You can run the following commands in a terminal to fully remove `plotly` before installing again:
 
 ```bash
-$ conda uninstall plotly
-$ pip remove plotly
+$ conda uninstall new_plotly
+$ pip remove new_plotly
 ```
 
 ### Dash Problems
@@ -78,7 +78,7 @@ If you have [installed additional python environments](https://ipython.readthedo
 > Version 4.14.3 or earlier needed two extensions (`jupyterlab-plotly` and `plotlywidget`) to be installed manually running:
 
 ```bash
-$ jupyter labextension install jupyterlab-plotly @jupyter-widgets/jupyterlab-manager plotlywidget
+$ jupyter labextension install jupyterlab-new_plotly @jupyter-widgets/jupyterlab-manager plotlywidget
 ```
 
 #### JupyterLab 2 and earlier

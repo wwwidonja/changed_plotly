@@ -80,9 +80,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 
 import publisher
 publisher.publish(
-    'ribbon.ipynb', 'python/ribbon-plots/', 'Python Ribbon Plots | plotly',
+    'ribbon.ipynb', 'python/ribbon-plots/', 'Python Ribbon Plots | new_plotly',
     'How to make ribbon plots in Python. ',
-    title = 'Python Ribbon Plots | plotly',
+    title = 'Python Ribbon Plots | new_plotly',
     name = 'Ribbon Plots',
     has_thumbnail='true', thumbnail='thumbnail/ribbon-plot.jpg',
     language='python', page_type='example_index',

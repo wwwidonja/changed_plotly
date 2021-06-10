@@ -104,7 +104,7 @@ def test_rejection_element_attr(validator):
 
     assert (
         "Invalid property specified for object of type "
-        + "plotly.graph_objs.Scatter: 'bogus'"
+        + "new_plotly.graph_objs.Scatter: 'bogus'"
         in str(validation_failure.value)
     )
 

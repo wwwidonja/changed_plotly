@@ -14,7 +14,7 @@ from chart_studio.plotly import plotly as py
 from unittest import TestCase
 import pytest
 
-matplotlylib = optional_imports.get_module("plotly.matplotlylib")
+matplotlylib = optional_imports.get_module("new_plotly.matplotlylib")
 
 if matplotlylib:
     import matplotlib.pyplot as plt

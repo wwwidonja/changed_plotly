@@ -6,7 +6,7 @@ import {
 
 import _ from "lodash";
 
-import Plotly from "plotly.js/dist/plotly";
+import Plotly from "new_plotly.js/dist/new_plotly";
 
 import { MODULE_NAME, MODULE_VERSION } from "./version";
 
@@ -409,7 +409,7 @@ export class FigureModel extends DOMWidgetModel {
 
       /**
        * Object representing the state of the input devices during a
-       * plotly event
+       * new_plotly event
        * @typedef {Object} InputDeviceState
        * @property {boolean} alt - true if alt key pressed,
        * false otherwise
@@ -859,7 +859,7 @@ export class FigureView extends DOMWidgetView {
         // ### Send layout delta ###
         that._sendLayoutDelta(layout_edit_id);
 
-        // Wire up plotly event callbacks
+        // Wire up new_plotly event callbacks
         (<Plotly.PlotlyHTMLElement>that.el).on("plotly_restyle", function (update: any) {
           that.handle_plotly_restyle(update);
         });
@@ -1648,7 +1648,7 @@ function py2js_deserializer(v: any, widgetManager?: any) {
       // Deserialize special buffer/dtype/shape objects into typed arrays
       // These objects correspond to numpy arrays on the Python side
       //
-      // Note plotly.py<=3.1.1 called the buffer object `buffer`
+      // Note new_plotly.py<=3.1.1 called the buffer object `buffer`
       // This was renamed `value` in 3.2 to work around a naming conflict
       // when saving widget state to a notebook.
       // @ts-ignore

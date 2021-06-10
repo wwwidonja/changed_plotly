@@ -81,9 +81,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Numerical_Differentiation.ipynb', 'python/numerical-differentiation/', 'Numerical Differentiation | plotly',
+    'python_Numerical_Differentiation.ipynb', 'python/numerical-differentiation/', 'Numerical Differentiation | new_plotly',
     'Learn how to differentiate a sequence or list of values numerically',
-    title='Numerical Differentiation in Python. | plotly',
+    title='Numerical Differentiation in Python. | new_plotly',
     name='Numerical Differentiation',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=6,

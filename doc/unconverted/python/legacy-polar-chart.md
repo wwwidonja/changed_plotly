@@ -297,7 +297,7 @@ import publisher
 publisher.publish(
     'polar.ipynb', 'python/legacy-polar-chart/', 'Polar Charts [Legacy]',
     'Legacy polar charts in python.',
-    title = 'Python Polar Charts | plotly',
+    title = 'Python Polar Charts | new_plotly',
     has_thumbnail='true', thumbnail='thumbnail/polar-scatter.jpg',
     language='python',
     display_as='legacy_charts', order=1,

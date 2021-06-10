@@ -920,7 +920,7 @@ class Presentation(dict):
     - to insert a block of text, begin with a line that denotes the code
       envoronment '```lang' where lang is a valid programming language. To find
       the valid languages run:\n
-      'plotly.presentation_objs.presentation_objs.VALID_LANGUAGES'\n
+      'new_plotly.presentation_objs.presentation_objs.VALID_LANGUAGES'\n
       To end the code block environment,
       write a single '```' line. All Plotly(url) and Image(url) lines will NOT
       be interpretted as a Plotly or Image url if they are in the code block.
@@ -1027,7 +1027,7 @@ class Presentation(dict):
                             raise _plotly_utils.exceptions.PlotlyError(
                                 "You are attempting to insert a Plotly Chart "
                                 "in your slide but your url does not have "
-                                "your plotly domain '{}' in it.".format(
+                                "your new_plotly domain '{}' in it.".format(
                                     get_config()["plotly_domain"]
                                 )
                             )

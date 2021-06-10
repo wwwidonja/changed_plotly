@@ -186,9 +186,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Peak-Fitting.ipynb', 'python/peak-fitting/', 'Peak Fitting | plotly',
+    'python-Peak-Fitting.ipynb', 'python/peak-fitting/', 'Peak Fitting | new_plotly',
     'Learn how to fit to peaks in Python',
-    title='Peak Fitting in Python | plotly',
+    title='Peak Fitting in Python | new_plotly',
     name='Peak Fitting',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='peak-analysis', order=5,

@@ -104,9 +104,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Frequency-Counts.ipynb', 'python/frequency-counts/', 'Frequency Counts | plotly',
+    'python-Frequency-Counts.ipynb', 'python/frequency-counts/', 'Frequency Counts | new_plotly',
     'Learn how to perform frequency counts using Python.',
-    title='Frequency Counts in Python. | plotly',
+    title='Frequency Counts in Python. | new_plotly',
     name='Frequency Counts',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='statistics', order=2,

@@ -56,7 +56,7 @@ def test_rejection_value(validator):
 
     assert (
         "Invalid property specified for object of type "
-        "plotly.graph_objs.scatter.Marker: 'bogus'" in str(validation_failure.value)
+        "new_plotly.graph_objs.scatter.Marker: 'bogus'" in str(validation_failure.value)
     )
 
 

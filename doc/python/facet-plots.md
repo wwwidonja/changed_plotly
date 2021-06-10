@@ -153,7 +153,7 @@ trace.update(legendgroup="trendline", showlegend=False)
 fig.add_trace(trace, row="all", col="all", exclude_empty_subplots=True)
 
 # set only the last trace added to appear in the legend
-# `selector=-1` introduced in plotly v4.13
+# `selector=-1` introduced in new_plotly v4.13
 fig.update_traces(selector=-1, showlegend=True)
 fig.show()
 ```

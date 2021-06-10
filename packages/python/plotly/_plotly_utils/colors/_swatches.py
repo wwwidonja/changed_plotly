@@ -2,7 +2,7 @@ def _swatches(module_names, module_contents, template=None):
     """
     Parameters
     ----------
-    template : str or dict or plotly.graph_objects.layout.Template instance
+    template : str or dict or new_plotly.graph_objects.layout.Template instance
         The figure template name or definition.
 
     Returns
@@ -36,7 +36,7 @@ def _swatches(module_names, module_contents, template=None):
             for name, colors in reversed(sequences)
         ],
         layout=dict(
-            title="plotly.colors." + module_names.split(".")[-1],
+            title="new_plotly.colors." + module_names.split(".")[-1],
             barmode="stack",
             barnorm="fraction",
             bargap=0.5,
@@ -53,7 +53,7 @@ def _swatches_continuous(module_names, module_contents, template=None):
     """
     Parameters
     ----------
-    template : str or dict or plotly.graph_objects.layout.Template instance
+    template : str or dict or new_plotly.graph_objects.layout.Template instance
         The figure template name or definition.
 
     Returns
@@ -90,7 +90,7 @@ def _swatches_continuous(module_names, module_contents, template=None):
             for name, colors in reversed(sequences)
         ],
         layout=dict(
-            title="plotly.colors." + module_names.split(".")[-1],
+            title="new_plotly.colors." + module_names.split(".")[-1],
             barmode="stack",
             barnorm="fraction",
             bargap=0.3,
@@ -108,7 +108,7 @@ def _swatches_cyclical(module_names, module_contents, template=None):
     """
     Parameters
     ----------
-    template : str or dict or plotly.graph_objects.layout.Template instance
+    template : str or dict or new_plotly.graph_objects.layout.Template instance
         The figure template name or definition.
 
     Returns
@@ -156,6 +156,6 @@ def _swatches_cyclical(module_names, module_contents, template=None):
     fig.update_traces(width=5.2, marker_line_width=0, base=0.5, showlegend=False)
     fig.update_polars(angularaxis_visible=False, radialaxis_visible=False)
     fig.update_layout(
-        title="plotly.colors." + module_names.split(".")[-1], template=args["template"]
+        title="new_plotly.colors." + module_names.split(".")[-1], template=args["template"]
     )
     return fig

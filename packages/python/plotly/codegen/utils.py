@@ -175,8 +175,8 @@ def format_description(desc):
 CUSTOM_VALIDATOR_DATATYPES = {
     "layout.image.source": "_plotly_utils.basevalidators.ImageUriValidator",
     "layout.template": "_plotly_utils.basevalidators.BaseTemplateValidator",
-    "frame.data": "plotly.validators.DataValidator",
-    "frame.layout": "plotly.validators.LayoutValidator",
+    "frame.data": "new_plotly.validators.DataValidator",
+    "frame.layout": "new_plotly.validators.LayoutValidator",
 }
 
 # Add custom dash validators
@@ -276,7 +276,7 @@ class PlotlyNode:
                 if c and c[0] != "_"
             ]
 
-            # Sort by plotly name
+            # Sort by new_plotly name
             self._children = sorted(self._children, key=lambda node: node.plotly_name)
         else:
             self._children = []
@@ -939,11 +939,11 @@ class PlotlyNode:
                     and self.parent.name_datatype_class == "Template"
                 ):
                     class_name = (
-                        f"plotly.graph_objects." f"{subtype_node.name_datatype_class}"
+                        f"new_plotly.graph_objects." f"{subtype_node.name_datatype_class}"
                     )
                 else:
                     class_name = (
-                        f"plotly.graph_objects"
+                        f"new_plotly.graph_objects"
                         f"{subtype_node.parent_dotpath_str}."
                         f"{subtype_node.name_datatype_class}"
                     )
@@ -956,10 +956,10 @@ class PlotlyNode:
                     subtype_node.name_datatype_class == "Layout"
                     and self.name_datatype_class == "Template"
                 ):
-                    class_name = "plotly.graph_objects.Layout"
+                    class_name = "new_plotly.graph_objects.Layout"
                 else:
                     class_name = (
-                        f"plotly.graph_objects"
+                        f"new_plotly.graph_objects"
                         f"{subtype_node.parent_dotpath_str}."
                         f"{subtype_node.name_datatype_class}"
                     )

@@ -199,7 +199,7 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'igraph_vs_networkx.ipynb', 'python/igraph-networkx-comparison/', 'Python Network Graphs Comparison | plotly',
+    'igraph_vs_networkx.ipynb', 'python/igraph-networkx-comparison/', 'Python Network Graphs Comparison | new_plotly',
     'Comparing a Network Graph created with igraph to one created with networkx in Python with Plotly. ',
     name = 'Network Graphs Comparison',
     thumbnail='thumbnail/networks.jpg', language='python',

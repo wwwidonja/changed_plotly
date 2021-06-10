@@ -7,7 +7,7 @@ import { Message } from "@lumino/messaging";
 
 import { IRenderMime } from "@jupyterlab/rendermime-interfaces";
 
-import type PlotlyType from "plotly.js/dist/plotly";
+import type PlotlyType from "new_plotly.js/dist/new_plotly";
 
 import "../style/index.css";
 
@@ -25,7 +25,7 @@ const CSS_ICON_CLASS = "jp-MaterialIcon jp-PlotlyIcon";
  * The MIME type for Plotly.
  * The version of this follows the major version of Plotly.
  */
-export const MIME_TYPE = "application/vnd.plotly.v1+json";
+export const MIME_TYPE = "application/vnd.new_plotly.v1+json";
 
 interface IPlotlySpec {
   data: PlotlyType.Data;
@@ -78,7 +78,7 @@ export class RenderedPlotly extends Widget implements IRenderMime.IRenderer {
   }
 
   private hasGraphElement() {
-    // Check for the presence of the .plot-container element that plotly.js
+    // Check for the presence of the .plot-container element that new_plotly.js
     // places at the top of the figure structure
     return this.node.querySelector(".plot-container") !== null;
   }
@@ -126,10 +126,10 @@ export class RenderedPlotly extends Widget implements IRenderMime.IRenderer {
       | any
       | IPlotlySpec;
 
-    // Load plotly asynchronously
+    // Load new_plotly asynchronously
     const loadPlotly = async (): Promise<void> => {
       if (RenderedPlotly.Plotly === null) {
-        RenderedPlotly.Plotly = await import("plotly.js/dist/plotly");
+        RenderedPlotly.Plotly = await import("new_plotly.js/dist/new_plotly");
         RenderedPlotly._resolveLoadingPlotly();
       } 
       return RenderedPlotly.loadingPlotly;
@@ -224,23 +224,23 @@ export const rendererFactory: IRenderMime.IRendererFactory = {
 
 const extensions: IRenderMime.IExtension | IRenderMime.IExtension[] = [
   {
-    id: "@jupyterlab/plotly-extension:factory",
+    id: "@jupyterlab/new_plotly-extension:factory",
     rendererFactory,
     rank: 0,
     dataType: "json",
     fileTypes: [
       {
-        name: "plotly",
+        name: "new_plotly",
         mimeTypes: [MIME_TYPE],
-        extensions: [".plotly", ".plotly.json"],
+        extensions: [".new_plotly", ".new_plotly.json"],
         iconClass: CSS_ICON_CLASS,
       },
     ],
     documentWidgetFactoryOptions: {
       name: "Plotly",
-      primaryFileType: "plotly",
-      fileTypes: ["plotly", "json"],
-      defaultFor: ["plotly"],
+      primaryFileType: "new_plotly",
+      fileTypes: ["new_plotly", "json"],
+      defaultFor: ["new_plotly"],
     },
   },
 ];

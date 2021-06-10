@@ -112,7 +112,7 @@ class GridTest(PlotlyTestCase):
         with self.assertRaises(InputError):
             parse_grid_id_args(self._grid, self._grid_url)
 
-    # not broken anymore since plotly 3.0.0
+    # not broken anymore since new_plotly 3.0.0
     # def test_scatter_from_non_uploaded_grid(self):
     #     c1 = Column([1, 2, 3, 4], 'first column')
     #     c2 = Column(['a', 'b', 'c', 'd'], 'second column')

@@ -153,9 +153,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'linear-gauge.ipynb', 'python/linear-gauge-chart/', 'Python Linear-Gauge Chart | plotly',
+    'linear-gauge.ipynb', 'python/linear-gauge-chart/', 'Python Linear-Gauge Chart | new_plotly',
     'How to make interactive linear-guage charts in Python with Plotly. ',
-    title = 'Python Linear-Gauge Chart | plotly',
+    title = 'Python Linear-Gauge Chart | new_plotly',
     name = 'Linear-Gauge Chart',
     thumbnail='thumbnail/linear-gauge.jpg', language='python',
     has_thumbnail='true', display_as='basic', order=12,

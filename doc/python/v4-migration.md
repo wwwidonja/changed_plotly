@@ -157,7 +157,7 @@ fig.show()
 
 ```python
 # Restore default theme
-pio.templates.default = "plotly"
+pio.templates.default = "new_plotly"
 ```
 
 See [Theming and templates](/python/templates) for more information on theming in plotly.py version 4.

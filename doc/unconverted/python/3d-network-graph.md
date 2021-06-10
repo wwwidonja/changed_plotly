@@ -199,7 +199,7 @@ import publisher
 publisher.publish(
     'Les-miserables-network.ipynb', 'python/3d-network-graph/', 'Python 3D Network Graphs',
     'How to make 3D Network Graphs in Python. ',
-    title = '3D Network Graphs in Python | plotly',
+    title = '3D Network Graphs in Python | new_plotly',
     name = '3D Network Graphs',
     has_thumbnail='true', thumbnail='thumbnail/3dnetwork.jpg',
     language='python', page_type='example_index',

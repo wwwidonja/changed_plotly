@@ -141,9 +141,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 !pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'filled-area-animation.ipynb', 'python/filled-area-animation/', 'Filled-Area Animation | plotly',
+    'filled-area-animation.ipynb', 'python/filled-area-animation/', 'Filled-Area Animation | new_plotly',
     'How to make an animated filled-area plot with apple stock data in Python.',
-    title='Filled-Area Animation | plotly',
+    title='Filled-Area Animation | new_plotly',
     name='Filled-Area Animation',
     language='python',
     page_type='example_index', has_thumbnail='true', thumbnail='thumbnail/apple_stock_animation.gif',

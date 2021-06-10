@@ -152,9 +152,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Normalization.ipynb', 'python/normalization/', 'Normalization | plotly',
+    'python_Normalization.ipynb', 'python/normalization/', 'Normalization | new_plotly',
     'Learn how to normalize data by fitting to intervals on the real line and dividing by a constant',
-    title='Normalization in Python. | plotly',
+    title='Normalization in Python. | new_plotly',
     name='Normalization',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=2,

@@ -17,7 +17,7 @@ setup(
     maintainer_email="jon@plot.ly",
     url="https://plot.ly/python/",
     project_urls={"Github": "https://github.com/plotly/plotly.py"},
-    description="Utilities for interfacing with plotly's Chart Studio",
+    description="Utilities for interfacing with new_plotly's Chart Studio",
     long_description=readme(),
     long_description_content_type="text/markdown",
     classifiers=[
@@ -37,10 +37,10 @@ setup(
         "chart_studio.api.v2",
         "chart_studio.dashboard_objs",
         "chart_studio.grid_objs",
-        "chart_studio.plotly",
-        "chart_studio.plotly.chunked_requests",
+        "chart_studio.new_plotly",
+        "chart_studio.new_plotly.chunked_requests",
         "chart_studio.presentation_objs",
     ],
-    install_requires=["plotly", "requests", "retrying>=1.3.3", "six"],
+    install_requires=["new_plotly", "requests", "retrying>=1.3.3", "six"],
     zip_safe=False,
 )

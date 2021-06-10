@@ -483,7 +483,7 @@ grid.fit(X, y)
 grid_df = pd.DataFrame(grid.cv_results_)
 
 # Convert the wide format of the grid into the long format
-# accepted by plotly.express
+# accepted by new_plotly.express
 melted = (
     grid_df
     .rename(columns=lambda col: col.replace('param_', ''))

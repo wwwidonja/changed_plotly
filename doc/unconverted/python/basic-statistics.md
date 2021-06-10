@@ -143,9 +143,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Basic-Statistics.ipynb', 'python/basic-statistics/', 'Basic Statistics | plotly',
+    'python-Basic-Statistics.ipynb', 'python/basic-statistics/', 'Basic Statistics | new_plotly',
     'Learn how to perform basic statistical operations using Python.',
-    title='Basic Statistics in Python. | plotly',
+    title='Basic Statistics in Python. | new_plotly',
     name='Basic Statistics',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='statistics', order=1,

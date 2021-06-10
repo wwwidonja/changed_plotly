@@ -98,9 +98,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Average_Multiple_Curves.ipynb', 'python/average_multiple_curves/', 'Average Multiple Curves | plotly',
+    'python_Average_Multiple_Curves.ipynb', 'python/average_multiple_curves/', 'Average Multiple Curves | new_plotly',
     'Learn how to average the values of multiple curves with Python.',
-    title='Average Multiple Curves in Python | plotly',
+    title='Average Multiple Curves in Python | new_plotly',
     name='Average Multiple Curves',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=9,

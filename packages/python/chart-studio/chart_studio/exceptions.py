@@ -2,7 +2,7 @@
 exceptions
 ==========
 
-A module that contains plotly's exception hierarchy.
+A module that contains new_plotly's exception hierarchy.
 
 """
 from __future__ import absolute_import
@@ -35,13 +35,13 @@ COLUMN_NOT_YET_UPLOADED_MESSAGE = (
     "Hm... it looks like your column '{column_name}' hasn't "
     "been uploaded to Plotly yet. You need to upload your "
     "column to Plotly before you can assign it to '{reference}'.\n"
-    "To upload, try `plotly.plotly.grid_objs.upload` or "
-    "`plotly.plotly.grid_objs.append_column`.\n"
-    "Questions? chris@plotly.com"
+    "To upload, try `new_plotly.new_plotly.grid_objs.upload` or "
+    "`new_plotly.new_plotly.grid_objs.append_column`.\n"
+    "Questions? chris@new_plotly.com"
 )
 
 NON_UNIQUE_COLUMN_MESSAGE = (
-    "Yikes, plotly grids currently "
+    "Yikes, new_plotly grids currently "
     "can't have duplicate column names. Rename "
     'the column "{0}" and try again.'
 )
@@ -58,11 +58,11 @@ class PlotlyLocalCredentialsError(PlotlyLocalError):
             "Couldn't find a 'username', 'api-key' pair for you on your local "
             "machine. To sign in temporarily (until you stop running Python), "
             "run:\n"
-            ">>> import plotly.plotly as py\n"
+            ">>> import new_plotly.new_plotly as py\n"
             ">>> py.sign_in('username', 'api_key')\n\n"
             "Even better, save your credentials permanently using the 'tools' "
             "module:\n"
-            ">>> import plotly.tools as tls\n"
+            ">>> import new_plotly.tools as tls\n"
             ">>> tls.set_credentials_file(username='username', "
             "api_key='api-key')\n\n"
             "For more help, see https://plotly.com/python.\n"

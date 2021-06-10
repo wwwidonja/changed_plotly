@@ -161,9 +161,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python_Interpolation_and_Extrapolation_in_1D.ipynb', 'python/interpolation-and-extrapolation-in-1d/', 'Interpolation and Extrapolation in 1D | plotly',
+    'python_Interpolation_and_Extrapolation_in_1D.ipynb', 'python/interpolation-and-extrapolation-in-1d/', 'Interpolation and Extrapolation in 1D | new_plotly',
     'Learn how to interpolation and extrapolate data in one dimension',
-    title='Interpolation and Extrapolation in 1D in Python. | plotly',
+    title='Interpolation and Extrapolation in 1D in Python. | new_plotly',
     name='Interpolation and Extrapolation in 1D',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='mathematics', order=3,

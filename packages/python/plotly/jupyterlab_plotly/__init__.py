@@ -1,5 +1,5 @@
 def _jupyter_labextension_paths():
-    return [{"src": "labextension", "dest": "jupyterlab-plotly"}]
+    return [{"src": "labextension", "dest": "jupyterlab-new_plotly"}]
 
 
 def _jupyter_nbextension_paths():
@@ -7,7 +7,7 @@ def _jupyter_nbextension_paths():
         {
             "section": "notebook",
             "src": "nbextension",
-            "dest": "jupyterlab-plotly",
-            "require": "jupyterlab-plotly/extension",
+            "dest": "jupyterlab-new_plotly",
+            "require": "jupyterlab-new_plotly/extension",
         }
     ]

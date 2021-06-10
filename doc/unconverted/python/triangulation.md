@@ -350,7 +350,7 @@ import publisher
 publisher.publish(
     'triangulation.ipynb', 'python/surface-triangulation/', 'Surface Triangulation',
     'How to make Tri-Surf plots in Python with Plotly.',
-    title = 'Python Surface Triangulation | plotly',
+    title = 'Python Surface Triangulation | new_plotly',
     name = 'Surface Triangulation',
     has_thumbnail='true', thumbnail='thumbnail/trisurf.jpg',
     language='python',

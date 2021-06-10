@@ -114,9 +114,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'python-Convolution.ipynb', 'python/convolution/', 'Convolution | plotly',
+    'python-Convolution.ipynb', 'python/convolution/', 'Convolution | new_plotly',
     'Learn how to perform convolution between two signals in Python.',
-    title='Convolution in Python | plotly',
+    title='Convolution in Python | new_plotly',
     name='Convolution',
     language='python',
     page_type='example_index', has_thumbnail='false', display_as='signal-analysis', order=4)

@@ -237,9 +237,9 @@ display(HTML('<link rel="stylesheet" type="text/css" href="http://help.plot.ly/d
 ! pip install git+https://github.com/plotly/publisher.git --upgrade
 import publisher
 publisher.publish(
-    'cmocean.ipynb', 'python/cmocean-colorscales/', 'Cmocean Colorscales | plotly',
+    'cmocean.ipynb', 'python/cmocean-colorscales/', 'Cmocean Colorscales | new_plotly',
     'How to make Cmocean Colorscales in Python with Plotly.',
-    title = 'Cmocean Colorscales | plotly',
+    title = 'Cmocean Colorscales | new_plotly',
     name = 'Cmocean Colorscales',
     has_thumbnail='true', thumbnail='thumbnail/colorbars.jpg',
     language='python', page_type='example_index',
